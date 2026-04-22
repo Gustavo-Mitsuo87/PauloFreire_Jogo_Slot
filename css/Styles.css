@@ -1,0 +1,332 @@
+  *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        body{
+            min-height: 100vh;
+            background: linear-gradient(180deg, #ff0000 0%, #a73a3a 100%);
+            color: black;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .header{
+            background-color:#910e0e;
+            width: 100%;
+        }
+
+        .nav{
+            max-width: 1200px;
+            height: 70px;
+            margin-inline: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-list{
+            list-style: none;
+        }
+
+        .page{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 18px;
+        }
+
+        .top-cards{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .card{
+            min-height: 78px;
+            border-radius: 12px;
+            padding: 14px 18px;
+            border: 1px solid rgba(255,255,255,.08);
+            box-shadow: 0 6px 18px rgba(0,0,0,.18);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .card .label{
+            font-size: 14px;
+            opacity: .95;
+            text-align: center;
+            color: white;
+        }
+
+        .card .value{
+            font-size: 22px;
+            font-weight: 800;
+            text-align: center;
+            color: white;
+        }
+
+        .card.bet,
+        .card.mult,
+        .card.win{
+            background: gold;
+        }
+
+        .game-layout{
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .formulario{
+            width: 400px;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: rgba(0, 0, 0, 0.377);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .caixa-aposta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            width: 100%;
+            border-radius: 8px;
+            background: linear-gradient(165deg, #e7c91c, #d4d40d);
+            border: 3px solid #ccb118;
+            color: white;
+        }
+
+        .caixa-aposta h1{
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .caixa-aposta h2{
+            font-size: 28px;
+        }
+
+        .caixa-apostar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-apostar-cem,
+        .btn-apostar-cinquenta,
+        .btn-apostar-dez {
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .btn-apostar-cem img,
+        .btn-apostar-cinquenta img,
+        .btn-apostar-dez img {
+            width: 100px;
+            height: 100px;
+            display: block;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: none;
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+            transition: 0.2s ease;
+        }
+
+        .btn-apostar-cem img:hover,
+        .btn-apostar-cinquenta img:hover,
+        .btn-apostar-dez img:hover {
+            transform: scale(1.1);
+        }
+
+        .btn-coletar,
+        .btn-reiniciar {
+            padding: 20px 60px;
+            font-size: 17px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.1s ease;
+        }
+
+        .btn-coletar{
+            background: #58cb58;
+        }
+
+        .btn-reiniciar{
+            background: #3c2929;
+        }
+
+        .btn-coletar:hover,
+        .btn-reiniciar:hover{
+            transform: scale(1.02);
+        }
+
+        .game-area{
+            position: relative;
+            width: 100%;
+            min-height: 520px;
+            background: linear-gradient(135deg, #1b2140 0%, #121730 100%);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .game-center{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .game-center h1{
+            font-size: 42px;
+            color: #e89a13;
+            letter-spacing: 1px;
+        }
+
+        .slot-machine{
+            width: min(420px, 92vw);
+            background: rgb(209, 191, 148);
+            border: 6px solid #f0c000;
+            border-radius: 26px;
+            padding: 24px 20px;
+            box-shadow: 0 12px 0 #e03906, 0 20px 35px rgba(0,0,0,.35);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .reels{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .reel{
+            width: 92px;
+            height: 92px;
+            background:  gold;
+            
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: inset 0 0 0 2px rgb(182, 117, 67);
+        }
+
+        .slot-text{
+            color: white;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .spin-btn{
+            width: 100%;
+            max-width: 320px;
+            background: linear-gradient(90deg, #ff3b5f, #ff2ea6);
+            color: white;
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-align: center;
+            padding: 18px 10px;
+            border-radius: 16px;
+            
+            box-shadow: 0 5px 0 #8a0827;
+            cursor: pointer;
+        }
+
+        .btnNav{
+            padding: 7px 14px;
+            background-color: orange;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btnNav:hover{
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 800px){
+            .top-cards{
+                grid-template-columns: 1fr;
+            }
+
+            .game-layout{
+                flex-direction: column;
+            }
+
+            .formulario{
+                width: 100%;
+                min-height: auto;
+            }
+
+            .game-area{
+                min-height: 480px;
+            }
+
+            .game-center h1{
+                font-size: 34px;
+            }
+
+            .reels{
+                gap: 10px;
+            }
+
+            .reel{
+                width: 76px;
+                height: 76px;
+                font-size: 2.5rem;
+            }
+
+            .btn-apostar-cem img,
+            .btn-apostar-cinquenta img,
+            .btn-apostar-dez img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .caixa-apostar{
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-coletar,
+            .btn-reiniciar{
+                width: 100%;
+            }
+        }
