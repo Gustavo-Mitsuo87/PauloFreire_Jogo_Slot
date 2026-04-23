@@ -11,27 +11,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  gap: 30px;
 
 }
 
-.header {
-            position: relative;
-            background: radial-gradient(circle at top, #4a000f, #240404);
-            padding: 15px 30px;
-            box-shadow: 
-                0 0 5px #8b0000,
-                0 0 10px #ff1a1a,
-                0 0 20px #ff4d4d;
-            overflow: hidden;
-        }
+.container-principal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-        .nav {
-            display: flex;
-            align-items: center;
-            position: relative;
-            justify-content: space-between;
-        }
+        
 
 .titulo {
     position: absolute;
@@ -93,15 +84,45 @@ body {
 }
 
 
+.anuncio-1 {
+  width: 25vh;
+  height: 60vh;
+  margin-top: 70px;
+    
+   /*Efeito de vidro (Firula kk)*/
+    background: rgba(255, 255, 255, 0.007);
+    box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.anuncio-2 {
+  width: 25vh;
+  height: 60vh;
+  margin-top: 70px;
+    
+   /*Efeito de vidro (Firula kk)*/
+    background: rgba(255, 255, 255, 0.007);
+    box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+
 
 
 .container-aposta{
   width: 100px;
   height: 300px;
-  background-color: green;
 }
 
-.container {
+.container-slot {
     /*Efeito de vidro (Firula kk)*/
     background: rgba(255, 255, 255, 0.007);
     box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
@@ -172,6 +193,7 @@ body {
 .card-saldo {
   width: 160px;
   height: 50px;
+  margin-top: 20px;
   
   display: flex;
   justify-content: center;
@@ -193,7 +215,8 @@ body {
 .card-mult {
   width: 180px;
   height: 50px;
-  background-color: #00ff88;
+  margin-top: 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,7 +238,8 @@ body {
 .card-aposta {
   width: 160px;
   height: 50px;
-  background-color: #00ff88;
+  margin-top: 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,11 +259,22 @@ body {
 }
 
 
-button { /*botão para girar o slot*/
+.container-botao{
+  width: 600px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.botao-mais{
   padding: 15px 50px;
   font-size: 22px;
   font-weight: bold;
   margin-top: 20px;
+  
 
   background: linear-gradient(#00c853, #009624);
   color: white;
@@ -253,6 +288,47 @@ button { /*botão para girar o slot*/
     0 5px 0 #006400,
     0 0 15px #00ff88;
 }
+
+.botao-menos{
+  padding: 15px 50px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  
+
+  background: linear-gradient(#c80000, #960000);
+  color: white;
+
+  border: none;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #641700,
+    0 0 15px #ff5100;
+}
+
+.botao-girar{
+  padding: 15px 50px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  
+
+  background: linear-gradient(#02ff6c, #00d432);
+  color: white;
+
+  border: none;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #006400,
+    0 0 15px #00ff88;
+}
+
 
 
 button:hover { /*efeito de crescimento do botão quando passa o mouse*/
