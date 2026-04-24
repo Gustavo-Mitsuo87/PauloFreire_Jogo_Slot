@@ -1,3 +1,7 @@
+/*i mports */
+
+@import url('https://googleapis.com');
+
 body {
 
   color: white;
@@ -258,6 +262,41 @@ body {
     inset 0 0 20px #000;
 }
 
+@keyframes pulsar-timer {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); } /* Aumenta 10% */
+  100% { transform: scale(1); }
+}
+
+@keyframes pulsar-botao-girar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); } /* Aumenta 10% */
+  100% { transform: scale(1); }
+}
+
+.container-time{
+  width: 150px;
+  height: 50px;
+
+ 
+  
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.timer-vermelho{
+  color: red;
+}
+
+#timer{
+  font-size: 30px;
+  font-family: 'Roboto Mono', monospace;
+
+  animation: pulsar-timer 1.5s infinite;
+}
 
 .container-botao{
   width: 600px;
@@ -266,7 +305,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 30px;
-  margin-top: 40px;
+  
 }
 
 .botao-mais{
@@ -274,7 +313,6 @@ body {
   font-size: 22px;
   font-weight: bold;
   margin-top: 20px;
-  
 
   background: linear-gradient(#00c853, #009624);
   color: white;
@@ -315,6 +353,7 @@ body {
   font-weight: bold;
   margin-top: 20px;
   
+  animation: pulsar-botao-girar 2s infinite;
 
   background: linear-gradient(#02ff6c, #00d432);
   color: white;
