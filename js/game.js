@@ -1,6 +1,8 @@
 //Código feito por Guilherme Oliveira Gomes
 //Aqui eu uso 2 tipos de lista apenas para efeitos visuais mais aleatórios
 
+//VOCE QUE ESTÁ LENDO ISSO, AQUI VAI INSTRUÇÕES PARA ADAPTAR AO FRONT:
+//Se vc está lendo isso, é porque está precisando adaptar o front com o back, o que imagino que deve ser chato. Mas n se preocupe, estou aqui apenas como um disclaimer. Em geral vc só vai precisar msm adaptar questões de DOM(tipo pegar imagens com id) e etc, porque a lógica em si está boa, e caso tenha dúvida de como adaptar, me chame no zap zap
 const imagens_src = [
   "/assets/Estrela.png",
   "/assets/cerejinha.webp",
