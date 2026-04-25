@@ -1,7 +1,0 @@
-Basico do SLOT mas sem animação e sem a incrementação de ficha
-
-Cada roletada é independente, não depende da outra
-
-5 Símbolos, 3 colunas, dando 125 combinações possíveis
-
-Cinzel, PLAYFAIR DISPLAY, league spartan
