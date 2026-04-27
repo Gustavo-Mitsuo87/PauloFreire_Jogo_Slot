@@ -4,16 +4,16 @@
 //VOCE QUE ESTÁ LENDO ISSO, AQUI VAI INSTRUÇÕES PARA ADAPTAR AO FRONT:
 //Se vc está lendo isso, é porque está precisando adaptar o front com o back, o que imagino que deve ser chato. Mas n se preocupe, estou aqui apenas como um disclaimer. Em geral vc só vai precisar msm adaptar questões de DOM(tipo pegar imagens com id) e etc, porque a lógica em si está boa, e caso tenha dúvida de como adaptar, me chame no zap zap
 const imagens_src = [
-  "/assets/Estrela.png",
-  "/assets/cerejinha.webp",
-  "/assets/Icone_da_casa.png",
-  "/assets/LemonFoot.webp",
-  "/assets/Uvas.webp",
+  "./assets/Estrela.png",
+  "./assets/cerejinha.webp",
+  "./assets/Icone_da_casa.png",
+  "./assets/LemonFoot.webp",
+  "./assets/Uvas.webp",
 ];
-const img1 = document.getElementById("img1");
-const img2 = document.getElementById("img2");
-const img3 = document.getElementById("img3");
-const btnRoletar = document.getElementById("btnRoletar");
+const img1 = document.getElementById("reel1");
+const img2 = document.getElementById("reel2");
+const img3 = document.getElementById("reel3");
+const btnRoletar = document.getElementById("gira");
 const saida_texto = document.getElementById("saida");
 
 //Essa função serve para decidir o tipo do resultado que terá, e poder manipular a máquina e o usuário a partir disso

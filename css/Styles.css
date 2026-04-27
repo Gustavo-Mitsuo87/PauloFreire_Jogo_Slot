@@ -128,8 +128,18 @@ body {
   min-height: 100%;
 }
 
+#reel1, #reel2, #reel3 {
+  width: 150px;
+  height: 150px;
+}
 
-img{
+#img1{
+  width: 25vh;
+  height: 60vh;
+  border-radius:10px ;
+}
+
+#img2{
   width: 25vh;
   height: 60vh;
   border-radius:10px ;
