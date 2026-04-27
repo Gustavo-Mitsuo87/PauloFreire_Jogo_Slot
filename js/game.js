@@ -13,7 +13,7 @@ const imagens_src = [
 const img1 = document.getElementById("reel1");
 const img2 = document.getElementById("reel2");
 const img3 = document.getElementById("reel3");
-const btnRoletar = document.getElementById("gira");
+const btnRoletar = document.getElementById("btn-girar");
 const saida_texto = document.getElementById("saida");
 
 //Essa função serve para decidir o tipo do resultado que terá, e poder manipular a máquina e o usuário a partir disso
@@ -41,9 +41,9 @@ function randomInt(min, max) {
 }
 
 //Aqui a atribuição feita para das imagens para as vitórias pequenas, médias e jackpots
-const img_comuns = ["/assets/cerejinha.webp", "/assets/Uvas.webp"];
-const img_medias = ["/assets/Estrela.png", "/assets/LemonFoot.webp"];
-const img_jackpot = ["/assets/Icone_da_casa.png"];
+const img_comuns = ["./assets/cerejinha.webp", "./assets/Uvas.webp"];
+const img_medias = ["./assets/Estrela.png", "./assets/LemonFoot.webp"];
+const img_jackpot = ["./assets/Icone_da_casa.png"];
 btnRoletar.addEventListener("click", () => {
   let num_1;
   let html;

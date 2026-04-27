@@ -133,17 +133,13 @@ body {
   height: 150px;
 }
 
-#img1{
+#img-anuncio{
   width: 25vh;
   height: 60vh;
   border-radius:10px ;
 }
 
-#img2{
-  width: 25vh;
-  height: 60vh;
-  border-radius:10px ;
-}
+
 
 
 .container-aposta{
