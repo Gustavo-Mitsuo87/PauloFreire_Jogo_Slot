@@ -1,82 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="PT-BR">
 <head>
-    <meta charset="UTF-8">
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slots - O melhor jeito de apostar</title>
-    <link rel="stylesheet" href="Styles.css">
+    <title>Slot</title>
+
+    <link rel="stylesheet" href="./css/Styles.css">
+
 </head>
+
+
+        
 <body>
-    <header class="header">
-        <nav class="nav">
-            <img src="Logo Slot.png" height="95px" width="95px" alt="Logo Slot">
-            <ul class="nav-list">
-                <button class="btnNav">Sair</button>
-            </ul>
-        </nav>
+    <header>
+            <h1 class="titulo">SLOT</h1>
     </header>
+<div class="carrosel-anuncio">
+    <div class="anuncio">
+        <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide">
+        <img id="img-anuncio" src="./assets/mines.jpeg" class="slide">
+        <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide">
+        <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide">
+        
+    </div>
+</div>
 
-    <main class="page">
-        <section class="top-cards">
-            <div class="card bet">
-                <div class="label">Aposta</div>
-                <div class="value">$ xxxx</div>
+<div class="container-principal">
+
+    <div class="container-slot">
+
+        
+
+        <div class="info">
+
+            <div class="card-saldo">
+                <p>Saldo: <span id="saldo">100</span> R$</p>
             </div>
 
-            <div class="card mult">
-                <div class="label">Multiplicador</div>
-                <div class="value">x.xx</div>
+            <div class="card-mult">
+                <p>Multiplicador: <span id="multiplicador">1x</span></p>
             </div>
 
-            <div class="card win">
-                <div class="label">Ganho Potencial</div>
-                <div class="value">$ xxxx</div>
+            <div class="card-aposta">
+                <p>Aposta: <span id="aposta">0</span> R$</p>
             </div>
-        </section>
+        
+        </div>
 
-        <section class="game-layout">
-            <aside class="formulario">
-                <div class="caixa-aposta">
-                    <h1>Aposta</h1>
-                    <h2>$ 0</h2>
-                </div>
 
-                <div class="caixa-apostar">
-                    <button class="btn-apostar-dez" id="btn-apostar-dez">
-                        <img src="ficha10.png" alt="Ficha 10">
-                    </button>
+    <div class="slot">
 
-                    <button class="btn-apostar-cinquenta" id="btn-apostar-cinquenta">
-                        <img src="ficha50.png" alt="Ficha 50">
-                    </button>
+        <div class="reel" ><img id="reel1" src="./assets/cerejinha.webp"></div>
+        <div class="reel" ><img id="reel2"  src="./assets/Estrela.png"></div>
+        <div class="reel" ><img id="reel3" src="./assets/LemonFoot.webp"></div>
+    
+    </div>
 
-                    <button class="btn-apostar-cem" id="btn-apostar-cem">
-                        <img src="ficha100.png" alt="Ficha 100">
-                    </button>
-                </div>
+    <div class="container-time">
+        <p id="timer">03:00</p>
 
-                <button class="btn-coletar" id="btn-coletar">Coletar</button>
-                <button class="btn-reiniciar" id="btn-reiniciar">Reiniciar</button>
-            </aside>
+    </div>
 
-            <section class="game-area">
-                <div class="game-center">
-                    <h1>Slot</h1>
+        <div class="container-botao">
+            <button class="botao-menos">-</button>
+            <button class="botao-girar" id="btn-girar">GIRAR</button>
+            <button class="botao-mais">+</button>
+        </div>
 
-                    <div class="slot-machine">
-                        <div class="reels">
-                            <div class="reel">7</div>
-                            <div class="reel">7</div>
-                            <div class="reel">7</div>
-                        </div>
+    </div>
+</div>
 
-                        <p class="slot-text">Tente novamente!</p>
-
-                        <button class="spin-btn" type="button">SPIN (10 créditos)</button>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </main>
+<div class="carrosel-anuncio">
+    <div class="anuncio2">
+        <img id="img-anuncio" src="./assets/mines.jpeg" class="slide2">
+        <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide2">
+        <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide2">
+        <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide2">
+    </div>
+</div>
+<script src="./js/game.js"></script>
+<script src="./js/ui.js"></script>
 </body>
 </html>
