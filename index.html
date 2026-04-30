@@ -1,85 +1,60 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-br">
 <head>
-
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slot</title>
-
-    <link rel="stylesheet" href="./css/Styles.css">
-
+    <title>Nome</title>
+    <link rel="stylesheet" href="./css/styleEntrada.css">
 </head>
 
 
-        
 <body>
-    <header>
-            <h1 class="titulo">SLOT</h1>
-    </header>
-<div class="carrosel-anuncio">
-    <div class="anuncio">
-        <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide">
-        <img id="img-anuncio" src="./assets/mines.jpeg" class="slide">
-        <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide">
-        <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide">
-        
+  <div>
+  <h1 class="Titulo"> Bem-vindo ao Slot</h1>
+  <h1 class="Titulo"> O melhor Cassino para jogar</h1>
+  </div>
+
+  <h2 class="Subtitulo"> Entre com seu nome e saldo para começar a jogar</h2>
+
+    <main class="Page">
+        <section class="card">
+
+                  <div class="card-nome">
+                    <form class="card-nome">
+                          <p class="SaldoMin"> Saldo Mínimo: 10 fichas</p>
+                          <input placeholder="Digite o seu Nome" type="text" name="nome">
+                          
+                          <input placeholder="Digite o seu saldo(Ex: 10, 20, 50)" type="number" min="10" step="10" name="saldo">
+
+                          <button type="button" id="btnEntrar">Entrar no Jogo</button>
+                          
+                    <p class="paragrafo"> Esse saldo será usado na partida</p>
+                   </form>
+              </div>
+
+        </section>
+
+    </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <h2 class="footer-logo">Slot</h2>
+
+      <p class="footer-text">
+        Projeto desenvolvido exclusivamente para fins educacionais, no âmbito das atividades acadêmicas da ETEC de
+        Guarulhos.
+      </p>
+
+      <div class="footer-links">
+        <a>Termos</a>
+        <a>Privacidade</a>
+        <a>Suporte</a>
+      </div>
+
+      <p class="footer-copy">© 2026 DSBet - Todos os direitos reservados</p>
     </div>
-</div>
-
-<div class="container-principal">
-
-    <div class="container-slot">
-
-        
-
-        <div class="info">
-
-            <div class="card-saldo">
-                <p>Saldo: <span id="saldo">100</span> R$</p>
-            </div>
-
-            <div class="card-mult">
-                <p>Multiplicador: <span id="multiplicador">1x</span></p>
-            </div>
-
-            <div class="card-aposta">
-                <p>Aposta: <span id="aposta">0</span> R$</p>
-            </div>
-        
-        </div>
-
-
-    <div class="slot">
-
-        <div class="reel" ><img id="reel1" src="./assets/cerejinha.webp"></div>
-        <div class="reel" ><img id="reel2"  src="./assets/Estrela.png"></div>
-        <div class="reel" ><img id="reel3" src="./assets/LemonFoot.webp"></div>
-    
-    </div>
-
-    <div class="container-time">
-        <p id="timer">03:00</p>
-
-    </div>
-
-        <div class="container-botao">
-            <button class="botao-menos">-</button>
-            <button class="botao-girar" id="btn-girar">GIRAR</button>
-            <button class="botao-mais">+</button>
-        </div>
-
-    </div>
-</div>
-
-<div class="carrosel-anuncio">
-    <div class="anuncio2">
-        <img id="img-anuncio" src="./assets/mines.jpeg" class="slide2">
-        <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide2">
-        <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide2">
-        <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide2">
-    </div>
-</div>
-<script src="./js/game.js"></script>
-<script src="./js/ui.js"></script>
+  </footer>
+<script type="module" src="./js/main.js"></script>
 </body>
+
 </html>
