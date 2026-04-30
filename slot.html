@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
 
 
@@ -11,84 +12,85 @@
 </head>
 
 
-        
+
 <body>
     <header>
-            <h1 class="titulo">SLOT</h1>
+        <h1 class="titulo">SLOT</h1>
     </header>
-<div class="carrosel-anuncio">
-    <div class="anuncio">
-        <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide">
-        <img id="img-anuncio" src="./assets/mines.jpeg" class="slide">
-        <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide">
-        <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide">
-        
-    </div>
-</div>
+    <div class="carrosel-anuncio">
+        <div class="anuncio">
+            <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide">
+            <img id="img-anuncio" src="./assets/mines.jpeg" class="slide">
+            <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide">
+            <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide">
 
-<div class="container-principal">
-
-    <div class="container-slot">
-
-        
-
-        <div class="info">
-
-            <div class="card-saldo">
-                <p>Saldo: <span id="saldo"></span> R$</p>
-            </div>
-
-            <div class="card-mult">
-                <p>Multiplicador: <span id="multiplicador">1x</span></p>
-            </div>
-
-            <div class="card-aposta">
-                <p>Aposta: <span id="aposta">0</span> R$</p>
-            </div>
-        
-        </div>
-
-
-    <div class="slot">
-
-        <div class="reel" ><img id="reel1" src="./assets/cerejinha.webp"></div>
-        <div class="reel" ><img id="reel2"  src="./assets/Estrela.png"></div>
-        <div class="reel" ><img id="reel3" src="./assets/LemonFoot.webp"></div>
-    
-    </div>
-
-    <div id="modalFim" class="modal">
-        <div class="modal-content">
-            <h2>Tempo esgotado!</h2>
-            <p>Sua sessão terminou.</p>
-            <button id="btnVoltar">Voltar ao início</button>
         </div>
     </div>
 
-    <div class="container-time">
-        <p id="timer">3:00</p>
+    <div class="container-principal">
 
-    </div>
+        <div class="container-slot">
 
-        <div class="container-botao">
-            <button class="botao-menos">-</button>
-            <button class="botao-girar" id="btn-girar">GIRAR</button>
-            <button class="botao-mais">+</button>
+
+
+            <div class="info">
+
+                <div class="card-saldo">
+                    <p>Saldo: <span id="saldo">0</span></p>
+                </div>
+
+                <div class="card-mult">
+                    <p>Multiplicador: <span id="multiplicador">1x</span></p>
+                </div>
+
+                <div class="card-aposta">
+                    <p>Aposta: <span id="aposta">0</span></p>
+                </div>
+
+            </div>
+
+
+            <div class="slot">
+
+                <div class="reel"><img id="reel1" src="./assets/cerejinha.webp"></div>
+                <div class="reel"><img id="reel2" src="./assets/Estrela.png"></div>
+                <div class="reel"><img id="reel3" src="./assets/LemonFoot.webp"></div>
+
+            </div>
+
+            <div class="container-time">
+                <p id="timer">3:00</p>
+
+            </div>
+
+            <div class="container-botao">
+                <button class="botao-menos" id="btnMenos">-</button>
+                <button class="botao-girar" id="btn-girar">GIRAR</button>
+                <button class="botao-mais" id="btnMais">+</button>
+            </div>
+
+            <div id="modalFim" class="modal">
+                <div class="modal-content">
+                    <h2>Tempo esgotado!</h2>
+                    <p>Sua sessão terminou.</p>
+                    <button id="btnVoltar">Voltar ao início</button>
+                </div>
+            </div>
+
         </div>
-
     </div>
-</div>
 
-<div class="carrosel-anuncio">
-    <div class="anuncio2">
-        <img id="img-anuncio" src="./assets/mines.jpeg" class="slide2">
-        <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide2">
-        <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide2">
-        <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide2">
+    <div class="carrosel-anuncio">
+        <div class="anuncio2">
+            <img id="img-anuncio" src="./assets/mines.jpeg" class="slide2">
+            <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide2">
+            <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide2">
+            <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide2">
+        </div>
     </div>
-</div>
+</body>
 <script src="./js/game.js"></script>
 <script src="./js/ui.js"></script>
-</body>
 <script type="module" src="./js/main.js"></script>
+
 </html>

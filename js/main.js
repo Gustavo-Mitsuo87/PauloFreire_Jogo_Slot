@@ -52,7 +52,6 @@ if (timer) {
 
         if (tempo <= 0) {
             clearInterval(intervalo);
-            console.log("tempo acabou");
             fimDeJogo();
         }
     }, 1000);
@@ -75,5 +74,32 @@ const btnVoltar = document.getElementById("btnVoltar");
 if (btnVoltar) {
     btnVoltar.addEventListener("click", () => {
         window.location.href = "index.html";
+        state.reset();
+    });
+}
+
+const btnMenos = document.getElementById("btnMenos");
+const btnMais = document.getElementById("btnMais");
+
+if (btnMenos) {
+    btnMenos.addEventListener("click", () => {
+        if (aposta > 0) {
+            const aposta = 0; // aqui tem que ser o valor da aposta
+            aposta -= 10; // aqui tem que ser o valor que o usuario quer aumentar a aposta
+            state.rodada(aposta);
+            document.getElementById("aposta").textContent = aposta; // aqui tem que ser o valor da aposta
+        }
+    });
+}
+
+if (btnMais) {
+    btnMais.addEventListener("click", () => {
+        const aposta = 0; // aqui tem que ser o valor da aposta
+        aposta += 10; // aqui tem que ser o valor que o usuario quer aumentar a aposta
+
+        if (aposta <= state.getSaldoAtual()) {
+            state.rodada(aposta);
+            document.getElementById("aposta").textContent = aposta; // aqui tem que ser o valor da aposta
+        }
     });
 }
