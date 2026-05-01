@@ -10,11 +10,7 @@ const imagens_src = [
   "./assets/LemonFoot.webp",
   "./assets/Uvas.webp",
 ];
-const img1 = document.getElementById("reel1");
-const img2 = document.getElementById("reel2");
-const img3 = document.getElementById("reel3");
-const btnRoletar = document.getElementById("btn-girar");
-const saida_texto = document.getElementById("saida");
+
 
 //Essa função serve para decidir o tipo do resultado que terá, e poder manipular a máquina e o usuário a partir disso
 function roletar_tipo() {
@@ -44,9 +40,14 @@ function randomInt(min, max) {
 const img_comuns = ["./assets/cerejinha.webp", "./assets/Uvas.webp"];
 const img_medias = ["./assets/Estrela.png", "./assets/LemonFoot.webp"];
 const img_jackpot = ["./assets/Icone_da_casa.png"];
-btnRoletar.addEventListener("click", () => {
+
+function girar() {
   let num_1;
-  let html;
+
+  const img1 = document.getElementById("reel1");
+  const img2 = document.getElementById("reel2");
+  const img3 = document.getElementById("reel3");
+  const saida_texto = document.getElementById("saida");
 
   let tipo_resultado = roletar_tipo();
   switch (tipo_resultado) {
@@ -54,8 +55,7 @@ btnRoletar.addEventListener("click", () => {
       img1.src = randomChoice(img_comuns);
       img2.src = randomChoice(img_medias);
       img3.src = img_jackpot[0];
-      html = `<p>Perda total.</p>`;
-      saida_texto.innerHTML = html;
+      return { ganhou: false, multiplicador: 0 }; //Mitsuo que adcionou
       break;
     //Aqui ele sorteia 2 números aleatórios, mas eu garanto que eles sejam diferentes para que não tenha 3 imagens iguais e o sistema entender que foi uma quase vitória
     case "Quase-vitória":
@@ -72,8 +72,7 @@ btnRoletar.addEventListener("click", () => {
       img1.src = imagens_src[embaralhar[0]];
       img2.src = imagens_src[embaralhar[1]];
       img3.src = imagens_src[embaralhar[2]];
-      html = `<p>Quase vitória.</p>`;
-      saida_texto.innerHTML = html;
+      return { ganhou: false, multiplicador: 0 }; //Mitsuo que adcionou
       break;
 
     case "Vitória pequena":
@@ -81,8 +80,7 @@ btnRoletar.addEventListener("click", () => {
       img1.src = num_1;
       img2.src = num_1;
       img3.src = num_1;
-      html = `<p>Vitória Pequena.</p>`;
-      saida_texto.innerHTML = html;
+      return { ganhou: true, multiplicador: 2 };
       break;
 
     case "Vitória Média":
@@ -90,16 +88,16 @@ btnRoletar.addEventListener("click", () => {
       img1.src = num_1;
       img2.src = num_1;
       img3.src = num_1;
-      html = `<p>Vitória Média.</p>`;
-      saida_texto.innerHTML = html;
+      return { ganhou: true, multiplicador: 3 };
       break;
 
     case "JACKPOT":
       img1.src = img_jackpot[0];
       img2.src = img_jackpot[0];
       img3.src = img_jackpot[0];
-      html = `<p>JACKPOT!!!!!!.</p>`;
-      saida_texto.innerHTML = html;
+      return { ganhou: true, multiplicador: 5 };
       break;
   }
-});
+};
+
+export { girar };

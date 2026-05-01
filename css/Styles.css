@@ -421,7 +421,7 @@ button:active { /*efeito de click no botão*/
 }
 
 .modal-content {
-    background: white;
+    background: rgb(0, 0, 0);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
