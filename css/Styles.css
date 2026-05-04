@@ -60,7 +60,7 @@ body {
   content: "";
     position: absolute;
     top: 50%;
-    width: 725px;
+    width: 710px;
     height: 10px;
     transform: translateY(-50%);
     transform: translateX(-100%);
@@ -79,7 +79,7 @@ body {
     content: "";
     position: absolute;
     top: 50%;
-    width: 725px;
+    width: 710px;
     height: 10px;
     
     background: radial-gradient(circle, #ffd700 4px, transparent 5px);
@@ -251,6 +251,7 @@ body {
 .card-saldo {
   width: 180px;
   height: 60px;
+  margin-top: 20px;
 
   font-size: 22px;
   
@@ -276,6 +277,7 @@ body {
 .card-mult {
   width: 185px;
   height: 60px;
+  margin-top: 20px;
 
   font-size: 20px;
   
@@ -306,6 +308,7 @@ body {
 .card-aposta {
   width: 180px;
   height: 60px;
+  margin-top: 20px;
 
   font-size: 22px;
   
@@ -500,7 +503,8 @@ button:active { /*efeito de click no botão*/
     0 0 20px #aa8a28;
 
     color: #fff;
-    height: 150px;
+    
+    width: 100%;
     padding: 40px 20px;
     text-align: center;
     margin-top: 15%;

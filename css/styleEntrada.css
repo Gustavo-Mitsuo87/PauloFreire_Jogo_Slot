@@ -91,10 +91,12 @@ button{
     0 0 20px #aa8a28;
 
     color: #fff;
+    
     height: 150px;
     padding: 40px 20px;
     text-align: center;
     margin-top: 15%;
+    
 }
 
 .footer::before,
