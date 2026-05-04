@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot</title>
+
+    <link rel="stylesheet" href="./css/Styles.css">
+
+</head>
+
+
+
+<body>
+    <header>
+        <h1 class="titulo">SLOT</h1>
+    </header>
+    <div class="carrosel-anuncio">
+        <div class="anuncio">
+            <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide">
+            <img id="img-anuncio" src="./assets/mines.jpeg" class="slide">
+            <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide">
+            <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide">
+
+        </div>
+    </div>
+
+    <div class="container-principal">
+
+        <div class="container-slot">
+
+
+
+            <div class="info">
+
+                <div class="card-saldo">
+                    <p>Saldo: <span id="saldoDisplay">0</span></p>
+                </div>
+
+                <div class="card-mult">
+                    <p>Multiplicador: <span id="multiplicador">1x</span></p>
+                </div>
+
+                <div class="card-aposta">
+                    <p>Aposta: <span id="aposta">0</span></p>
+                </div>
+
+            </div>
+
+
+            <div class="slot">
+
+                <div class="reel"><img id="reel1" src="./assets/cerejinha.webp"></div>
+                <div class="reel"><img id="reel2" src="./assets/Estrela.png"></div>
+                <div class="reel"><img id="reel3" src="./assets/LemonFoot.webp"></div>
+
+            </div>
+
+            <div class="container-time">
+                <p id="timer">3:00</p>
+
+            </div>
+
+            <div class="container-botao">
+                <button class="botao-menos" id="btnMenos">-</button>
+                <button class="botao-girar" id="btn-girar">GIRAR</button>
+                <button class="botao-mais" id="btnMais">+</button>
+            </div>
+
+            <div id="modalFim" class="modal">
+                <div class="modal-content">
+                    <h2 id="mensagem"></h2>
+                    <p>Sua sessão terminou.</p>
+                    <button id="btnVoltar">Voltar ao início</button>
+                </div>
+            </div>
+
+        </div>
+    
+
+    <footer class="footer">
+    <div class="footer-content">
+      <h2 class="footer-logo">Slot</h2>
+
+      <p class="footer-text">
+        Projeto desenvolvido exclusivamente para fins educacionais, no âmbito das atividades acadêmicas da ETEC de
+        Guarulhos.
+      </p>
+
+      <div class="footer-links">
+        <a>Termos</a>
+        <a>Privacidade</a>
+        <a>Suporte</a>
+      </div>
+
+      <p class="footer-copy">© 2026 DSBet - Todos os direitos reservados</p>
+    </div>
+  </footer>
+</div>
+
+<div class="carrosel-anuncio">
+        <div class="anuncio2">
+            <img id="img-anuncio" src="./assets/mines.jpeg" class="slide2">
+            <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide2">
+            <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide2">
+            <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide2">
+        </div>
+    </div>
+
+
+</body>
+
+<script src="./js/ui.js"></script>
+<script type="module" src="./js/main.js"></script>
+
+</html>

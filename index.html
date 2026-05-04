@@ -3,80 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slots - O melhor jeito de apostar</title>
-    <link rel="stylesheet" href="Styles.css">
+    <title>Nome</title>
+    <link rel="stylesheet" href="./css/styleEntrada.css">
 </head>
+
+
 <body>
-    <header class="header">
-        <nav class="nav">
-            <img src="Logo Slot.png" height="95px" width="95px" alt="Logo Slot">
-            <ul class="nav-list">
-                <button class="btnNav">Sair</button>
-            </ul>
-        </nav>
-    </header>
+    
+  <div>
+  <h1 class="Titulo"> Bem-vindo ao Slot</h1>
+  <h1 class="Titulo"> O melhor Cassino para jogar</h1>
+  </div>
 
-    <main class="page">
-        <section class="top-cards">
-            <div class="card bet">
-                <div class="label">Aposta</div>
-                <div class="value">$ xxxx</div>
-            </div>
+  <h2 class="Subtitulo"> Entre com seu nome e saldo para começar a jogar</h2>
 
-            <div class="card mult">
-                <div class="label">Multiplicador</div>
-                <div class="value">x.xx</div>
-            </div>
+    <main class="Page">
+        <section class="card">
 
-            <div class="card win">
-                <div class="label">Ganho Potencial</div>
-                <div class="value">$ xxxx</div>
-            </div>
+                  <div class="card-nome">
+                    <form class="card-nome">
+                          <p class="SaldoMin"> Saldo Mínimo: 10 fichas</p>
+                          <input placeholder="Digite o seu Nome" type="text" name="nome" id="name">
+                          
+                          <input placeholder="Digite o seu saldo(Ex: 10, 20, 50)" type="number" min="10" step="10" name="saldo" id="saldoInput">
+
+                          <button type="button" id="btnEntrar">Entrar no Jogo</button>
+                          
+                    <p class="paragrafo"> Esse saldo será usado na partida</p>
+                   </form>
+              </div>
+
         </section>
 
-        <section class="game-layout">
-            <aside class="formulario">
-                <div class="caixa-aposta">
-                    <h1>Aposta</h1>
-                    <h2>$ 0</h2>
-                </div>
-
-                <div class="caixa-apostar">
-                    <button class="btn-apostar-dez" id="btn-apostar-dez">
-                        <img src="ficha10.png" alt="Ficha 10">
-                    </button>
-
-                    <button class="btn-apostar-cinquenta" id="btn-apostar-cinquenta">
-                        <img src="ficha50.png" alt="Ficha 50">
-                    </button>
-
-                    <button class="btn-apostar-cem" id="btn-apostar-cem">
-                        <img src="ficha100.png" alt="Ficha 100">
-                    </button>
-                </div>
-
-                <button class="btn-coletar" id="btn-coletar">Coletar</button>
-                <button class="btn-reiniciar" id="btn-reiniciar">Reiniciar</button>
-            </aside>
-
-            <section class="game-area">
-                <div class="game-center">
-                    <h1>Slot</h1>
-
-                    <div class="slot-machine">
-                        <div class="reels">
-                            <div class="reel">7</div>
-                            <div class="reel">7</div>
-                            <div class="reel">7</div>
-                        </div>
-
-                        <p class="slot-text">Tente novamente!</p>
-
-                        <button class="spin-btn" type="button">SPIN (10 créditos)</button>
-                    </div>
-                </div>
-            </section>
-        </section>
     </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <h2 class="footer-logo">Slot</h2>
+
+      <p class="footer-text">
+        Projeto desenvolvido exclusivamente para fins educacionais, no âmbito das atividades acadêmicas da ETEC de
+        Guarulhos.
+      </p>
+
+      <div class="footer-links">
+        <a>Termos</a>
+        <a>Privacidade</a>
+        <a>Suporte</a>
+      </div>
+
+      <p class="footer-copy">© 2026 DSBet - Todos os direitos reservados</p>
+    </div>
+  </footer>
+<script type="module" src="./js/main.js"></script>
 </body>
 </html>
