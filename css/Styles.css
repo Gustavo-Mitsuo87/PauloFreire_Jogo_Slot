@@ -60,7 +60,7 @@ body {
   content: "";
     position: absolute;
     top: 50%;
-    width: 900px;
+    width: 630px;
     height: 10px;
     transform: translateY(-50%);
     transform: translateX(-100%);
@@ -71,13 +71,15 @@ body {
     background-repeat: repeat-x;
 
     filter: drop-shadow(0 0 5px #ffd700);
+
+    animation: bolinhasAndando 2s linear infinite;
 }
 
 .titulo::after {
     content: "";
     position: absolute;
     top: 50%;
-    width: 750px;
+    width: 625px;
     height: 10px;
     
     background: radial-gradient(circle, #ffd700 4px, transparent 5px);
@@ -85,31 +87,37 @@ body {
     background-repeat: repeat-x;
 
     filter: drop-shadow(0 0 5px #ffd700);
+
+    animation: bolinhasAndando 2s linear infinite;
+}
+
+@keyframes bolinhasAndando {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 30px 0;
+    }
 }
 
 
 .carrosel-anuncio{
   overflow: hidden;
 
-  width: 25vh;
-  height: 60vh;
+  width: 30vh;
+  height: 80vh;
   margin-top: 70px;
-
- 
- 
-}
-
-.anuncio-1 {
-  width: 25vh;
-  height: 60vh;
-  margin-top: 70px;
-    
 
   box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
 
+  animation: pulsarSombra 0.8s infinite;
+  
+
+ 
+ 
 }
+
 
 .anuncio {
     
@@ -126,20 +134,21 @@ body {
 
 .slide {
   min-height: 100%;
+  
 }
 
-#reel1, #reel2, #reel3 {
-  width: 150px;
-  height: 150px;
-}
 
 #img-anuncio{
-  width: 25vh;
-  height: 60vh;
+  width: 30vh;
+  height: 80vh;
   border-radius:10px ;
 }
 
 
+#reel1, #reel2, #reel3 {
+  width: 100px;
+  height: 100px;
+}
 
 
 .container-aposta{
@@ -151,14 +160,17 @@ body {
     /*Efeito de vidro (Firula kk)*/
     background: rgba(255, 255, 255, 0.007);
     box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
+    
+    
+
     backdrop-filter: blur( 13.5px );
     -webkit-backdrop-filter: blur( 13.5px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
 
     /*Tamanho da area onde todo o jogo fica*/
-    width: 100vh;
-    height: 70vh;
+    width: 110vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -168,12 +180,28 @@ body {
 }
 
 
+
+@keyframes pulsarSombra {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 215, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0);
+  }
+}
+
+
 .slot { /*area onde fica as figuras*/
+
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 20px;
   
-  width: 500px;
+  width: 470px;
 
   padding: 30px;
   border-radius: 20px;
@@ -181,14 +209,16 @@ body {
   /*efeito de profundidade*/
   background: linear-gradient(145deg, #22222280, #111);
   box-shadow: 
-    0 0 20px gold,
+    0 0 10px gold,
     inset 0 0 20px #000;
+
+    
 }
 
 
 .reel { /*quadrado das figuras do slot*/
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
 
   background: linear-gradient(#fff, #ddd);
   border: 4px solid gold;
@@ -203,6 +233,8 @@ body {
   box-shadow:
     inset 0 0 10px #000,
     0 0 10px gold;
+
+    animation: pulsarSombra 0.5s infinite;
 }
 
 
@@ -218,7 +250,7 @@ body {
 .card-saldo {
   width: 160px;
   height: 50px;
-  margin-top: 20px;
+  
   
   display: flex;
   justify-content: center;
@@ -227,20 +259,21 @@ body {
   color: rgb(64, 255, 0); /*cor do titulo*/
   text-shadow: 0 0 10px rgb(255, 215, 0), 0 0 20px orange; /*efeito de brilho*/
 
+  animation: pulsarSombra 0.8s infinite;
 
   border-radius: 10px;
 
   /*efeito de profundidade*/
   background: linear-gradient(145deg, #22222280, #111);
   box-shadow: 
-    0 0 20px gold,
+    0 0 10px gold,
     inset 0 0 20px #000;
 }
 
 .card-mult {
   width: 180px;
   height: 50px;
-  margin-top: 20px;
+  
 
   display: flex;
   justify-content: center;
@@ -249,21 +282,26 @@ body {
   color: gold; /*cor do titulo*/
   text-shadow: 0 0 10px rgb(255, 215, 0), 0 0 20px orange; /*efeito de brilho*/
 
-  animation: piscar 0.5s linear infinite; /* nome, duração, tipo, repetição */
+  animation: pulsarSombra 0.8s infinite;
+
+  
+
+  /* animation: piscar 0.5s linear infinite; */
+   /* nome, duração, tipo, repetição */
 
   border-radius: 10px;
 
   /*efeito de profundidade*/
   background: linear-gradient(145deg, #22222280, #111);
   box-shadow: 
-    0 0 20px gold,
+    0 0 10px gold,
     inset 0 0 20px #000;
 }
 
 .card-aposta {
   width: 160px;
   height: 50px;
-  margin-top: 20px;
+  
 
   display: flex;
   justify-content: center;
@@ -272,16 +310,21 @@ body {
   color: rgb(0, 255, 200); /*cor do titulo*/
   text-shadow: 0 0 10px rgb(255, 215, 0), 0 0 20px orange; /*efeito de brilho*/
 
-  animation: piscar 1s linear infinite; /* nome, duração, tipo, repetição */
+  /* animation: piscar 1s linear infinite; */
+   /* nome, duração, tipo, repetição */
+
+  animation: pulsarSombra 0.8s infinite;
 
   border-radius: 10px;
 
   /*efeito de profundidade*/
   background: linear-gradient(145deg, #22222280, #111);
   box-shadow: 
-    0 0 20px gold,
+    0 0 10px gold,
     inset 0 0 20px #000;
 }
+
+
 
 @keyframes pulsar-timer {
   0% { transform: scale(1); }
@@ -291,9 +334,22 @@ body {
 
 @keyframes pulsar-botao-girar {
   0% { transform: scale(1); }
-  50% { transform: scale(1.07); } /* Aumenta 10% */
+  50% { transform: scale(1.04); } /* Aumenta 10% */
   100% { transform: scale(1); }
 }
+
+@keyframes pulsarSombra-botao-girar {
+  0% {
+    box-shadow:  0 0 5px #006400, 0 0 10px #00ff88;
+    }
+  50% {
+    box-shadow: 0 0 5px #006400, 0 0 20px #00ff88;
+  }
+  100% {
+    box-shadow: 0 0 5px #006400, 0 0 10px #00ff88;
+  }
+}
+
 
 .container-time{
   width: 150px;
@@ -330,7 +386,7 @@ body {
   padding: 15px 50px;
   font-size: 22px;
   font-weight: bold;
-  margin-top: 20px;
+ 
 
   background: linear-gradient(#00c853, #009624);
   color: white;
@@ -349,7 +405,7 @@ body {
   padding: 15px 50px;
   font-size: 22px;
   font-weight: bold;
-  margin-top: 20px;
+  
   
 
   background: linear-gradient(#c80000, #960000);
@@ -369,7 +425,7 @@ body {
   padding: 15px 50px;
   font-size: 22px;
   font-weight: bold;
-  margin-top: 20px;
+  
   
   animation: pulsar-botao-girar 2s infinite;
 
@@ -384,6 +440,8 @@ body {
   box-shadow:
     0 5px 0 #006400,
     0 0 15px #00ff88;
+
+  animation: pulsarSombra-botao-girar 1s infinite;
 }
 
 
