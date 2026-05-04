@@ -129,7 +129,7 @@ if (btnGirar) {
         }
 
         if (!state.rodada(aposta)) { // valida o saldo e desconta do viciado
-            fimDeJogo(`<h2>💸 Saldo insuficiente!</h2>`);
+            fimDeJogo(`<h2>! SALDO INSUFICIENTE !</h2>`);
             return;
         }
 
@@ -152,7 +152,7 @@ if (btnGirar) {
         // fim de jogo
         if (state.getSaldoAtual() <= 0) {
             fimDeJogo(`
-                <h2>💀 Já era pro betinha!</h2>
+                <h2>! SALDO INSUFICIENTE !</h2>
                 <p>Saldo final: ${state.getSaldoAtual()}</p>
             `);
         }
