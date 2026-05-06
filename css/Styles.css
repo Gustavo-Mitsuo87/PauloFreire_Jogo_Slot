@@ -8,7 +8,7 @@ body {
   color: white;
   text-align: center;
   font-family: Arial;
-  background-image: url(../assets/fundo-slot.png);
+  background-image: url(../assets/fundo-slot2.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -90,7 +90,7 @@ body::-webkit-scrollbar {
     content: "";
     position: absolute;
     top: 50%;
-    width: 750px;
+    width: 720px;
     height: 10px;
     
     background: radial-gradient(circle, #ffd700 4px, transparent 5px);
@@ -116,7 +116,7 @@ body::-webkit-scrollbar {
   overflow: hidden;
   flex: 0 0 auto;
 
-  width: 30vh;
+  width: 25vh;
   height: 65vh;
   margin-top: 16vh;
   
@@ -152,7 +152,7 @@ body::-webkit-scrollbar {
 
 
 #img-anuncio{
-  width: 30vh;
+  width: 25vh;
   height: 65vh;
   border-radius:10px ;
 }
@@ -657,7 +657,7 @@ button:active { /*efeito de click no botão*/
     position: absolute;
     
     margin-top: 12px;
-    width: 750px;
+    width: 720px;
     height: 10px;
     
     background: radial-gradient(circle, #ffd700 4px, transparent 5px);
