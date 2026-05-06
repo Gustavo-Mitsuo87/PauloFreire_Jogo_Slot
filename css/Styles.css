@@ -17,7 +17,12 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
+
   
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 
@@ -66,7 +71,7 @@ body {
   content: "";
     position: absolute;
     top: 50%;
-    width: 710px;
+    width: 750px;
     height: 10px;
     transform: translateY(-50%);
     transform: translateX(-100%);
@@ -85,7 +90,7 @@ body {
     content: "";
     position: absolute;
     top: 50%;
-    width: 710px;
+    width: 750px;
     height: 10px;
     
     background: radial-gradient(circle, #ffd700 4px, transparent 5px);
@@ -112,8 +117,9 @@ body {
   flex: 0 0 auto;
 
   width: 30vh;
-  height: 80vh;
-  margin-top: 10vh;
+  height: 65vh;
+  margin-top: 16vh;
+  
 
  
 
@@ -138,6 +144,7 @@ body {
   
     display: flex;
     transition: transform 0.5s ease-in-out;
+  
 
 }
 
@@ -149,7 +156,7 @@ body {
 
 #img-anuncio{
   width: 30vh;
-  height: 80vh;
+  height: 65vh;
   border-radius:10px ;
 }
 
@@ -176,11 +183,11 @@ body {
 
     /*Tamanho da area onde todo o jogo fica*/
     width: 110vh;
-    height: 80vh;
+    height: 65vh;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 70px;
+    margin-top: 16vh;
     
     
 }
@@ -543,9 +550,6 @@ button:active { /*efeito de click no botão*/
     -webkit-backdrop-filter: blur( 13.5px );
     border-radius: 10px;
 
-    /* box-shadow: 
-    0 0 10px gold,
-    inset 0 0 20px #000; */
 
     animation: pulsarSombra 1s infinite;
     
@@ -559,6 +563,20 @@ button:active { /*efeito de click no botão*/
         0 0 5px #ff0000,
         0 0 10px #ff0000,
         0 0 20px #ff0000e4;
+ 
+    
+}
+
+.mensagem-modal2{
+  animation: piscar 0.8s infinite;
+  color: rgb(0, 255, 0);
+  font-weight: bold;
+  font-size: 2.5vh;
+
+  text-shadow:
+        0 0 5px #04ff00,
+        0 0 10px #44ff00,
+        0 0 20px #6aff00e4;
  
     
 }
@@ -622,7 +640,7 @@ button:active { /*efeito de click no botão*/
     position: absolute;
     
     margin-top: 12px;
-    width: 710px;
+    width: 750px;
     height: 10px;
     transform: translateY(-60%);
     transform: translateX(-100%);
@@ -642,7 +660,7 @@ button:active { /*efeito de click no botão*/
     position: absolute;
     
     margin-top: 12px;
-    width: 710px;
+    width: 750px;
     height: 10px;
     
     background: radial-gradient(circle, #ffd700 4px, transparent 5px);
@@ -661,9 +679,7 @@ button:active { /*efeito de click no botão*/
     
     padding: 40px 20px;
     text-align: center;
-    margin-top: 15%;
-    
-
+    margin-top: 21vh;
     
 }
 

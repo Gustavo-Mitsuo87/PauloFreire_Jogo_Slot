@@ -133,21 +133,24 @@ if (timer) {
 
         if (tempo <= 0) {
             clearInterval(intervalo);
-            fimDeJogo(`<h2>Acabou seu tempo!</h2>
-                    <p>Saldo final: ${state.getSaldoAtual()}</p>`);
+            fimDeJogo(`<h2>! SEU TEMPO ACABOU !</h2>`
+                    ,`<p>Saldo final: ${state.getSaldoAtual()}</p>`);
         }
     }, 1000);
 }
 
-function fimDeJogo(mensagem) {
+function fimDeJogo(mensagem, mensagem2) {
     const modal = document.getElementById("modalFim");
     const mensagemEl = document.getElementById("mensagem");
+    const mensagemEl2 = document.getElementById("mensagem2");
+
 
     if (modal) {
         modal.style.display = "flex";
     }
-    if (mensagemEl) {
+    if (mensagemEl && mensagemEl2) {
         mensagemEl.innerHTML = mensagem;
+        mensagemEl2.innerHTML = mensagem2;
     }
     // bloquear cliques
     document.body.style.pointerEvents = "none";
@@ -234,8 +237,8 @@ if (btnGirar) {
         // fim de jogo
         if (state.getSaldoAtual() <= 0) {
             fimDeJogo(`
-                <h2>! SALDO INSUFICIENTE !</h2>
-                <p>Saldo final: ${state.getSaldoAtual()}</p>
+                <h2>! SALDO INSUFICIENTE !</h2>`,
+                `<p>Saldo final: ${state.getSaldoAtual()}</p>
             `);
         }
     });

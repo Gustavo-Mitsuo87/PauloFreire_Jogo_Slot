@@ -27,8 +27,12 @@ body{
     
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 header{
-    width: 90%;
+    width: 50%;
 }
 
 
@@ -52,11 +56,26 @@ main{
     align-items: center;
     
     border-radius: 18px;
-    margin-top: 10%;
+    margin-top: 15vh;
     box-shadow: 
     0 0 6px #d0c243,
     0 0 12px #b3a615,
     0 0 24px #d0c00d;
+
+    animation: pulsarSombra 1s infinite;
+}
+
+
+@keyframes pulsarSombra {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 215, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0);
+  }
 }
 
 .card-nome{
@@ -65,6 +84,8 @@ main{
     flex-direction: column;
     gap: 20px;
     color: rgb(235, 223, 223);
+
+
 }
 
 
@@ -73,14 +94,28 @@ input{
     border-radius: 7px;
     padding: 7px;
     background-color: white;
+
+    
 }
 
 button{
-    border-radius: 7px;
+    /* border-radius: 7px; */
     padding: 7px;
-    background-color: gold;
-    border: 2px solid #be8227;
-    cursor: pointer;
+    /* background-color: gold;
+    border: 2px solid #be8227; */
+    
+
+  background: linear-gradient(#d2c61b, #d4c900);
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #616400,
+    0 0 15px #fff20098;
 }
 
 .footer {
@@ -95,13 +130,13 @@ button{
     height: 150px;
     padding: 40px 20px;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 23.5vh;
     
 }
 
 .footer::before,
 .footer::after {
-    content: "";
+    content: " ";
     position: absolute;
     left: 0;
     top: 20px;
@@ -178,43 +213,45 @@ button{
     color: gold;
     display: flex;
     justify-content: center;
+
+    animation: pulsarSombra 0.5s infinite;
+}
+
+@keyframes brilhoTitulo {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
 }
 
 .Titulo{
-  position: relative;
-  font-family: "Anton", sans-serif;
-  font-size: 80px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  line-height: 1;
+
   
-  /* preenchimento dourado */
-  background: linear-gradient(
-    180deg,
-    gold 0%,
-    hsl(51, 70%, 62%)  18%,
-    gold 65%,
-    #e2ce5a 82%,
-    gold 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-
-  /* contorno */
-  -webkit-text-stroke: 2px #794719;
-
-  margin-top: 3%;
+   position: relative;
+   font-family: Oswald;
+   font-size: 70px;
+   letter-spacing: 4px;
+   text-transform: uppercase;
+   line-height: 1;
+  
+    background: linear-gradient(90deg, #fff3a0, #ffd700, #ffb300, #fff3a0);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  
+ 
+    
+  
+  text-shadow:
+        0 0 5px #ffd700,
+        0 0 10px #ffcc00,
+        0 0 20px #ffb300;
+    
+  margin-top: 10vh;
   justify-content: center;
   display: flex;
-}
-
-.Subtitulo{
-    font-family: "Anton", sans-serif;
-    font-size: 30px;
-    color: rgb(57, 52, 6);
-    text-shadow: 0 0 5px #d1b917, 0 0 10px #d1b917;
-    display: flex;
-    justify-content: center;
-    margin-top: 70px;
 }
