@@ -1,6 +1,85 @@
 import state from "./state.js";
 import { girar } from "./game.js";
 
+// ===== EFEITOS VISUAIS =====
+const efeitoWin = document.getElementById("efeitoWin");
+const winTexto = document.getElementById("winTexto");
+const jackpot = document.getElementById("jackpot");
+const video = document.getElementById("videoJackpot");
+
+function ativarEfeitoMultiplicador(mult) {
+    if (mult === 2) { //Quando o multiplicador for 2 ele usa a função efeitoSimples Com o valor da multiplicação
+        efeitoSimples(mult);
+    } 
+    else if (mult === 3) { //Quando o multiplicador for 3 ele usa a função efeitoExplosão Com o valor da multiplicação
+        efeitoExplosao(mult);
+        
+    }  
+    else if (mult >= 5) { //Quando o multiplicador for 3ele usa a função efeitoJackpot Com o valor da multiplicação
+        efeitoJackpot(mult);
+    }
+}
+
+//Função efeitoSimples, o conteudo do Wintexto será o valor da mult registrado e adicionara um X
+
+//A classe efeitoWin vira display flex assim aparecendo na tela, depois de 800 milisegundos ele some
+
+function efeitoSimples(mult) { 
+    winTexto.textContent = mult + "x";
+    efeitoWin.style.display = "flex";
+
+    setTimeout(() => {
+        efeitoWin.style.display = "none";
+    }, 800);
+}
+
+//Função efeitoExplosão, o conteudo de winTexto é substituido pelo valor da mult com um "X"
+
+//efeitoWin vira flex para aparecer na tela e adiciona a classe explodir para tem uma animação do texto aparecendo na tela
+//A classe explodir esta com uma animação do proprio css que quando adicionada ja é acionado o efeito.
+
+function efeitoExplosao(mult) {
+    winTexto.textContent = mult + "x";
+    efeitoWin.style.display = "flex";
+
+    winTexto.classList.add("explodir");
+
+    setTimeout(() => {
+        efeitoWin.style.display = "none";
+        winTexto.classList.remove("explodir");
+    }, 1000);
+}
+
+//Função efeitoJackpot, o conteudo de winTexto é substituido pelo valor da mult com um "X"
+
+//jackpot vira flex para aparecer na tela, o video vaui para o inicio e da play, fica na tela por 10 segundos/10100Milisegundos.
+
+function efeitoJackpot() {
+    jackpot.style.display = "flex";
+
+    video.currentTime = 0;
+    video.play();
+
+    setTimeout(() => {
+        jackpot.style.display = "none";
+
+        winTexto.textContent = "JACKPOT \n5X";
+        efeitoWin.style.display = "flex";
+
+        winTexto.classList.add("explodir-jackpot");
+
+        setTimeout(() => {
+            efeitoWin.style.display = "none";
+            winTexto.classList.remove("explodir")
+
+        }, 2000)
+    }, 8000);
+}
+
+
+
+// ==== PARTE DE VALORES, MULTIPLICADOR E TIMER ====
+
 // Isso aqui é para entrar no slot
 const btnEntrar = document.getElementById("btnEntrar");
 
@@ -137,6 +216,9 @@ if (btnGirar) {
 
         if (resultado.ganhou) {
             state.atualizacaoSaldo(true, aposta, resultado.multiplicador);
+
+            // 💥 AQUI ENTRA O EFEITO
+            ativarEfeitoMultiplicador(resultado.multiplicador);
         }
         state.salvarEstado();
 
@@ -158,3 +240,7 @@ if (btnGirar) {
         }
     });
 }
+
+
+
+
