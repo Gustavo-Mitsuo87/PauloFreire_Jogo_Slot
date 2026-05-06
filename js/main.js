@@ -78,6 +78,7 @@ function efeitoJackpot() {
 
 
 
+
 // ==== PARTE DE VALORES, MULTIPLICADOR E TIMER ====
 
 // Isso aqui é para entrar no slot
@@ -211,7 +212,7 @@ if (btnGirar) {
         }
 
         if (!state.rodada(aposta)) { // valida o saldo e desconta do viciado
-            fimDeJogo(`<h2>! SALDO INSUFICIENTE !</h2>`);
+            alert ("Aposta acima do saldo");
             return;
         }
 
@@ -220,7 +221,7 @@ if (btnGirar) {
         if (resultado.ganhou) {
             state.atualizacaoSaldo(true, aposta, resultado.multiplicador);
 
-            // 💥 AQUI ENTRA O EFEITO
+            
             ativarEfeitoMultiplicador(resultado.multiplicador);
         }
         state.salvarEstado();
@@ -243,7 +244,3 @@ if (btnGirar) {
         }
     });
 }
-
-
-
-
