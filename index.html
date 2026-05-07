@@ -3,80 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slots - O melhor jeito de apostar</title>
-    <link rel="stylesheet" href="Styles.css">
+    <title>Nome</title>
+    <link rel="stylesheet" href="./css/styleEntrada.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
-    <header class="header">
-        <nav class="nav">
-            <img src="Logo Slot.png" height="95px" width="95px" alt="Logo Slot">
-            <ul class="nav-list">
-                <button class="btnNav">Sair</button>
-            </ul>
-        </nav>
-    </header>
+  
+ 
 
-    <main class="page">
-        <section class="top-cards">
-            <div class="card bet">
-                <div class="label">Aposta</div>
-                <div class="value">$ xxxx</div>
-            </div>
+    <main class="Page">
+        <section class="card">
+          <h1 class="Titulo">DSBET ETEC SLOT Machine </h1>
 
-            <div class="card mult">
-                <div class="label">Multiplicador</div>
-                <div class="value">x.xx</div>
-            </div>
+                  <div class="card-nome">
+                    <form class="card-nome">
+                          <p class="SaldoMin"> Saldo Mínimo: 10 fichas</p>
+                          
 
-            <div class="card win">
-                <div class="label">Ganho Potencial</div>
-                <div class="value">$ xxxx</div>
-            </div>
+                           <div class="form-control">
+                             <input type="text" required="" id="name">
+                                <label>
+                                    <span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">o</span><span style="transition-delay:100ms">m</span><span style="transition-delay:150ms">e</span>
+                                </label>
+                          </div>
+                          
+                          <div class="form-control">
+                             <input type="value" required="" id="saldoInput">
+                                <label>
+                                    <span style="transition-delay:0ms">S</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">l</span><span style="transition-delay:150ms">d</span><span style="transition-delay:200ms">o</span>
+                                </label>
+                          </div>
+
+                          <button type="button" id="btnEntrar">Entrar no Jogo</button>
+                          
+                    <p class="paragrafo"> Esse saldo será usado na partida</p>
+                   </form>
+              </div>
+
         </section>
 
-        <section class="game-layout">
-            <aside class="formulario">
-                <div class="caixa-aposta">
-                    <h1>Aposta</h1>
-                    <h2>$ 0</h2>
-                </div>
-
-                <div class="caixa-apostar">
-                    <button class="btn-apostar-dez" id="btn-apostar-dez">
-                        <img src="ficha10.png" alt="Ficha 10">
-                    </button>
-
-                    <button class="btn-apostar-cinquenta" id="btn-apostar-cinquenta">
-                        <img src="ficha50.png" alt="Ficha 50">
-                    </button>
-
-                    <button class="btn-apostar-cem" id="btn-apostar-cem">
-                        <img src="ficha100.png" alt="Ficha 100">
-                    </button>
-                </div>
-
-                <button class="btn-coletar" id="btn-coletar">Coletar</button>
-                <button class="btn-reiniciar" id="btn-reiniciar">Reiniciar</button>
-            </aside>
-
-            <section class="game-area">
-                <div class="game-center">
-                    <h1>Slot</h1>
-
-                    <div class="slot-machine">
-                        <div class="reels">
-                            <div class="reel">7</div>
-                            <div class="reel">7</div>
-                            <div class="reel">7</div>
-                        </div>
-
-                        <p class="slot-text">Tente novamente!</p>
-
-                        <button class="spin-btn" type="button">SPIN (10 créditos)</button>
-                    </div>
-                </div>
-            </section>
-        </section>
     </main>
+
+  <footer class="footer"> 
+    <div class="footer-content">
+      <h2 class="footer-logo">Slot</h2>
+
+      <p class="footer-text">
+        Projeto desenvolvido exclusivamente para fins educacionais, no âmbito das atividades acadêmicas da ETEC de
+        Guarulhos.
+      </p>
+
+      <div class="footer-links">
+        <a>Termos</a>
+        <a>Privacidade</a>
+        <a>Suporte</a>
+      </div>
+
+      <p class="footer-copy">© 2026 DSBet - Todos os direitos reservados</p>
+    </div>
+  </footer>
+<script type="module" src="./js/main.js"></script>
 </body>
 </html>

@@ -1,332 +1,805 @@
-  *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 900;
-            font-size: 20px;
-        }
+/*i mports */
 
-        body{
-            min-height: 100vh;
-            background: linear-gradient(180deg, #ff0000 0%, #a73a3a 100%);
-            color: black;
-        }
+@import url('https://googleapis.com');
 
-        a{
-            text-decoration: none;
-        }
 
-        .header{
-            background-color:#910e0e;
-            width: 100%;
-        }
+body {
 
-        .nav{
-            max-width: 1200px;
-            height: 70px;
-            margin-inline: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+  color: white;
+  text-align: center;
+  font-family: Arial;
+  background-image: url(../assets/fundo-slot.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 
-        .nav-list{
-            list-style: none;
-        }
+  
+}
 
-        .page{
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 18px;
-        }
+body::-webkit-scrollbar {
+  display: none;
+}
 
-        .top-cards{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin-bottom: 16px;
-        }
 
-        .card{
-            min-height: 78px;
-            border-radius: 12px;
-            padding: 14px 18px;
-            border: 1px solid rgba(255,255,255,.08);
-            box-shadow: 0 6px 18px rgba(0,0,0,.18);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 6px;
-        }
 
-        .card .label{
-            font-size: 14px;
-            opacity: .95;
-            text-align: center;
-            color: white;
-        }
+.container-principal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-        .card .value{
-            font-size: 22px;
-            font-weight: 800;
-            text-align: center;
-            color: white;
-        }
+  
+ }
 
-        .card.bet,
-        .card.mult,
-        .card.win{
-            background: gold;
-        }
+        
 
-        .game-layout{
-            display: flex;
-            gap: 20px;
-            align-items: stretch;
-        }
+.titulo {
+    position: absolute;
+    left: 50%;
+    top: -8px;
+    transform: translateX(-50%);
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 34px;
+    background: linear-gradient(90deg, #fff3a0, #ffd700, #ffb300, #fff3a0);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 
-        .formulario{
-            width: 400px;
-            min-height: 520px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            background-color: rgba(0, 0, 0, 0.377);
-            padding: 20px;
-            border-radius: 12px;
-        }
+    text-shadow:
+        0 0 5px #ffd700,
+        0 0 10px #ffcc00,
+        0 0 20px #ffb300;
+    animation: brilhoTitulo 3s linear infinite;
+}
+@keyframes brilhoTitulo {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
 
-        .caixa-aposta {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100px;
-            width: 100%;
-            border-radius: 8px;
-            background: linear-gradient(165deg, #e7c91c, #d4d40d);
-            border: 3px solid #ccb118;
-            color: white;
-        }
+.titulo::before {
+  content: "";
+    position: absolute;
+    top: 50%;
+    width: 750px;
+    height: 10px;
+    transform: translateY(-50%);
+    transform: translateX(-100%);
 
-        .caixa-aposta h1{
-            font-size: 26px;
-            margin-bottom: 5px;
-        }
 
-        .caixa-aposta h2{
-            font-size: 28px;
-        }
+    background: radial-gradient(circle, #ffd700 4px, transparent 5px);
+    background-size: 30px 10px;
+    background-repeat: repeat-x;
 
-        .caixa-apostar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-        }
+    filter: drop-shadow(0 0 5px #ffd700);
 
-        .btn-apostar-cem,
-        .btn-apostar-cinquenta,
-        .btn-apostar-dez {
-            background: transparent;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-        }
+    animation: bolinhasAndando 2s linear infinite;
+}
 
-        .btn-apostar-cem img,
-        .btn-apostar-cinquenta img,
-        .btn-apostar-dez img {
-            width: 100px;
-            height: 100px;
-            display: block;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: none;
-            background: transparent;
-            cursor: pointer;
-            padding: 0;
-            transition: 0.2s ease;
-        }
+.titulo::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 750px;
+    height: 10px;
+    
+    background: radial-gradient(circle, #ffd700 4px, transparent 5px);
+    background-size: 30px 10px;
+    background-repeat: repeat-x;
 
-        .btn-apostar-cem img:hover,
-        .btn-apostar-cinquenta img:hover,
-        .btn-apostar-dez img:hover {
-            transform: scale(1.1);
-        }
+    filter: drop-shadow(0 0 5px #ffd700);
 
-        .btn-coletar,
-        .btn-reiniciar {
-            padding: 20px 60px;
-            font-size: 17px;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: 0.1s ease;
-        }
+    animation: bolinhasAndando 2s linear infinite;
+}
 
-        .btn-coletar{
-            background: #58cb58;
-        }
+@keyframes bolinhasAndando {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 30px 0;
+    }
+}
 
-        .btn-reiniciar{
-            background: #3c2929;
-        }
 
-        .btn-coletar:hover,
-        .btn-reiniciar:hover{
-            transform: scale(1.02);
-        }
+.carrosel-anuncio{
+  overflow: hidden;
+  flex: 0 0 auto;
 
-        .game-area{
-            position: relative;
-            width: 100%;
-            min-height: 520px;
-            background: linear-gradient(135deg, #1b2140 0%, #121730 100%);
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+  width: 30vh;
+  height: 65vh;
+  margin-top: 16vh;
+  
 
-        .game-center{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            text-align: center;
-        }
+ 
 
-        .game-center h1{
-            font-size: 42px;
-            color: #e89a13;
-            letter-spacing: 1px;
-        }
+  box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
+  border-radius: 10px;
 
-        .slot-machine{
-            width: min(420px, 92vw);
-            background: rgb(209, 191, 148);
-            border: 6px solid #f0c000;
-            border-radius: 26px;
-            padding: 24px 20px;
-            box-shadow: 0 12px 0 #e03906, 0 20px 35px rgba(0,0,0,.35);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+  animation: pulsarSombra 0.8s infinite;
+  
+}
 
-        .reels{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 18px;
-        }
 
-        .reel{
-            width: 92px;
-            height: 92px;
-            background:  gold;
-            
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            box-shadow: inset 0 0 0 2px rgb(182, 117, 67);
-        }
+.anuncio {
+    
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 
-        .slot-text{
-            color: white;
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
+}
+.anuncio2 {
+  
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  
 
-        .spin-btn{
-            width: 100%;
-            max-width: 320px;
-            background: linear-gradient(90deg, #ff3b5f, #ff2ea6);
-            color: white;
-            font-size: 1.15rem;
-            font-weight: 800;
-            text-align: center;
-            padding: 18px 10px;
-            border-radius: 16px;
-            
-            box-shadow: 0 5px 0 #8a0827;
-            cursor: pointer;
-        }
+}
 
-        .btnNav{
-            padding: 7px 14px;
-            background-color: orange;
-            color: white;
-            font-weight: bold;
-            border-radius: 10px;
-            cursor: pointer;
-            border: none;
-        }
+.slide {
+  min-height: 100%;
+  
+}
 
-        .btnNav:hover{
-            transform: scale(1.03);
-        }
 
-        @media (max-width: 800px){
-            .top-cards{
-                grid-template-columns: 1fr;
-            }
+#img-anuncio{
+  width: 30vh;
+  height: 65vh;
+  border-radius:10px ;
+}
 
-            .game-layout{
-                flex-direction: column;
-            }
 
-            .formulario{
-                width: 100%;
-                min-height: auto;
-            }
+#reel1, #reel2, #reel3 {
+  width: 150px;
+  height: 150px;
+}
 
-            .game-area{
-                min-height: 480px;
-            }
 
-            .game-center h1{
-                font-size: 34px;
-            }
+.container-aposta{
+  width: 100px;
+  height: 300px;
+}
 
-            .reels{
-                gap: 10px;
-            }
+.container-slot {
+    /*Efeito de vidro (Firula kk)*/
+    background: rgba(255, 255, 255, 0.007);
+    box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+    
 
-            .reel{
-                width: 76px;
-                height: 76px;
-                font-size: 2.5rem;
-            }
+    /*Tamanho da area onde todo o jogo fica*/
+    width: 110vh;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 16vh;
+    
+    
+}
 
-            .btn-apostar-cem img,
-            .btn-apostar-cinquenta img,
-            .btn-apostar-dez img {
-                width: 80px;
-                height: 80px;
-            }
 
-            .caixa-apostar{
-                justify-content: center;
-                flex-wrap: wrap;
-            }
 
-            .btn-coletar,
-            .btn-reiniciar{
-                width: 100%;
-            }
-        }
+@keyframes pulsarSombra {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 215, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0);
+  }
+}
+
+
+.slot { /*area onde fica as figuras*/
+
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  
+  width: 550px;
+
+  padding: 30px;
+  border-radius: 20px;
+
+  /*efeito de profundidade*/
+  background: linear-gradient(145deg, #222222, #111);
+  box-shadow: 
+    0 0 10px gold,
+    inset 0 0 20px #000;
+
+    
+}
+
+
+.reel { /*quadrado das figuras do slot*/
+  width: 175px;
+  height: 175px;
+
+  background: linear-gradient(#fff, #ddd);
+  border: 4px solid gold;
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 80px;
+
+  box-shadow:
+    inset 0 0 10px #000,
+    0 0 10px gold;
+
+    animation: pulsarSombra 0.5s infinite;
+}
+
+
+.info { /*informações (aposta e multiplicador.)*/
+  margin-bottom: 20px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card-saldo {
+  width: 180px;
+  height: 60px;
+  margin-top: 20px;
+
+  font-size: 22px;
+  font-family: Oswald;
+  
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgb(64, 255, 0); /*cor do titulo*/
+  text-shadow: 0 0 10px rgb(255, 215, 0), 0 0 20px orange; /*efeito de brilho*/
+
+  animation: pulsarSombra 0.8s infinite;
+
+  border-radius: 10px;
+
+  /*efeito de profundidade*/
+  background: linear-gradient(145deg, #22222280, #111);
+  box-shadow: 
+    0 0 10px gold,
+    inset 0 0 20px #000;
+}
+
+.card-mult {
+  width: 185px;
+  height: 60px;
+  margin-top: 20px;
+
+  font-size: 20px;
+  font-family: Oswald;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: gold; /*cor do titulo*/
+  text-shadow: 0 0 10px rgb(255, 215, 0), 0 0 20px orange; /*efeito de brilho*/
+
+  animation: pulsarSombra 0.8s infinite;
+
+  
+
+  /* animation: piscar 0.5s linear infinite; */
+   /* nome, duração, tipo, repetição */
+
+  border-radius: 10px;
+
+  /*efeito de profundidade*/
+  background: linear-gradient(145deg, #22222280, #111);
+  box-shadow: 
+    0 0 10px gold,
+    inset 0 0 20px #000;
+}
+
+.card-aposta {
+  width: 180px;
+  height: 60px;
+  margin-top: 20px;
+
+  font-size: 22px;
+
+  font-family: Oswald;
+  
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgb(0, 255, 200); /*cor do titulo*/
+  text-shadow: 0 0 10px rgb(255, 215, 0), 0 0 20px orange; /*efeito de brilho*/
+
+  /* animation: piscar 1s linear infinite; */
+   /* nome, duração, tipo, repetição */
+
+  animation: pulsarSombra 0.8s infinite;
+
+  border-radius: 10px;
+
+  /*efeito de profundidade*/
+  background: linear-gradient(145deg, #22222280, #111);
+  box-shadow: 
+    0 0 10px gold,
+    inset 0 0 20px #000;
+}
+
+
+
+@keyframes pulsar-timer {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); } /* Aumenta 10% */
+  100% { transform: scale(1); }
+}
+
+@keyframes pulsar-botao-girar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); } /* Aumenta 10% */
+  100% { transform: scale(1); }
+}
+
+@keyframes pulsarSombra-botao-girar {
+  0% {
+    box-shadow:  0 0 5px #006400, 0 0 10px #00ff88;
+    }
+  50% {
+    box-shadow: 0 0 5px #006400, 0 0 20px #00ff88;
+  }
+  100% {
+    box-shadow: 0 0 5px #006400, 0 0 10px #00ff88;
+  }
+}
+
+
+.container-time{
+  width: 150px;
+  height: 50px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.timer-vermelho{
+  color: red;
+}
+
+#timer{
+  font-size: 30px;
+  font-family: 'Roboto Mono', monospace;
+
+  animation: pulsar-timer 1.5s infinite;
+}
+
+.container-botao{
+  width: 600px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  
+}
+
+.botao-mais{
+  padding: 15px 50px;
+  font-size: 22px;
+  font-weight: bold;
+ 
+
+  background: linear-gradient(#00c853, #009624);
+  color: white;
+
+  border: none;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #006400,
+    0 0 15px #00ff88;
+}
+
+.botao-menos{
+  padding: 15px 50px;
+  font-size: 22px;
+  font-weight: bold;
+  
+  
+
+  background: linear-gradient(#c80000, #960000);
+  color: white;
+
+  border: none;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #641700,
+    0 0 15px #ff5100;
+}
+
+.botao-girar{
+  padding: 15px 50px;
+  font-size: 22px;
+  font-weight: bold;
+  
+  
+  animation: pulsar-botao-girar 2s infinite;
+
+  background: linear-gradient(#02ff6c, #00d432);
+  color: white;
+
+  border: none;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #006400,
+    0 0 15px #00ff88;
+
+  animation: pulsarSombra-botao-girar 1s infinite;
+}
+
+.dica-botao-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dica-botao-texto {
+  visibility: hidden;
+  width: 120px;
+  font-style: italic;
+  color: #FFD700;
+  
+  text-shadow:
+        0 0 5px #ffd700,
+        0 0 10px #ffcc00,
+        0 0 20px #ffb300;
+    animation: brilhoTitulo 3s linear infinite;
+
+
+  font-weight: bold; 
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Posiciona acima do botão */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s; /* Efeito suave */
+}
+
+.dica-botao-container:hover .dica-botao-texto {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+button:hover { /*efeito de crescimento do botão quando passa o mouse*/
+  transform: scale(1.05);
+}
+
+
+button:active { /*efeito de click no botão*/
+  transform: scale(0.95);
+  box-shadow: 0 2px 0 #006400;
+}
+
+/* animação */
+
+@keyframes piscar {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+
+/* Modal para avisar do tempo acabado */
+.modal {
+    display: none; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0); 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.653);
+    box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+
+
+    animation: pulsarSombra 1s infinite;
+    
+}
+
+.mensagem-modal{
+  animation: piscar 1s infinite;
+  color: red;
+
+  text-shadow:
+        0 0 5px #ff0000,
+        0 0 10px #ff0000,
+        0 0 20px #ff0000e4;
+ 
+    
+}
+
+.mensagem-modal2{
+  animation: piscar 0.8s infinite;
+  color: rgb(0, 255, 0);
+  font-weight: bold;
+  font-size: 2.5vh;
+
+  text-shadow:
+        0 0 5px #04ff00,
+        0 0 10px #44ff00,
+        0 0 20px #6aff00e4;
+ 
+    
+}
+
+.paragrafo-modal{
+  color: rgba(254, 63, 63, 0.655);
+
+  animation: brilhoTitulo 3s linear infinite;
+
+  font-size: large;
+ 
+
+
+  font-weight: bold;
+  text-shadow:
+        0 0 5px #ff003c7e,
+        0 0 10px #ff00408c,
+        0 0 20px #ff002f56;
+}
+
+.btnModal{
+
+  padding: 10px 30px;
+  font-size: 15px;
+  font-weight: bold;
+  
+  
+
+  background: linear-gradient(#c80000, #960000);
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #641700,
+    0 0 15px #ff0000;
+}
+
+.paragrafo-modal-botao{
+
+   color: rgb(254, 235, 63);
+
+  animation: brilhoTitulo 3s linear infinite;
+
+ 
+
+
+  font-weight: bold;
+  text-shadow:
+        0 0 5px #ffe10084,
+        0 0 10px #f2ff0028,
+        0 0 20px #ffff0014;
+
+}
+
+.footer-logo::before {
+  content: "";
+    position: absolute;
+    
+    margin-top: 12px;
+    width: 750px;
+    height: 10px;
+    transform: translateY(-60%);
+    transform: translateX(-100%);
+
+
+    background: radial-gradient(circle, #ffd700 4px, transparent 5px);
+    background-size: 30px 10px;
+    background-repeat: repeat-x;
+
+    filter: drop-shadow(0 0 5px #ffd700);
+
+    animation: bolinhasAndando 2s linear infinite;
+}
+
+.footer-logo::after {
+    content: "";
+    position: absolute;
+    
+    margin-top: 12px;
+    width: 750px;
+    height: 10px;
+    
+    background: radial-gradient(circle, #ffd700 4px, transparent 5px);
+    background-size: 30px 10px;
+    background-repeat: repeat-x;
+
+    filter: drop-shadow(0 0 5px #ffd700);
+
+    animation: bolinhasAndando 2s linear infinite;
+}
+
+.footer {
+   
+    color: #fff;
+    
+    
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 21vh;
+    
+}
+
+.footer-content{  
+
+  padding: 10px;
+
+   background: rgba(0, 0, 0, 0.653);
+   box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
+   backdrop-filter: blur( 13.5px );
+   -webkit-backdrop-filter: blur( 13.5px );
+   border-radius: 10px;
+
+
+}
+
+.footer-logo {
+
+    font-size: 28px;
+    background: linear-gradient(45deg, #d1b917, #ffcc00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px
+
+
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+.footer-copy {
+    font-size: 12px;
+    color: #777;
+}
+
+
+.efeito-win {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle, rgba(255,215,0,0.3), rgba(0,0,0,0.9));
+  z-index: 9999;
+}
+
+.efeito-win span {
+  font-size: 120px;
+  color: gold;
+  font-weight: bold;
+
+  text-shadow:
+        0 0 5px #ffd700,
+        0 0 10px #ffcc00,
+        0 0 20px #ffb300;
+
+  white-space: pre-wrap;
+    
+}
+
+/* explosão */
+@keyframes explosao {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes explosao-jackpot {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(5); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.explodir {
+  animation: explosao 0.6s ease;
+}
+
+.explodir-jackpot {
+  animation: explosao 0.6s ease;
+}
+
+
+/* jackpot */
+.jackpot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+  background: black;
+  z-index: 9999;
+}
+
+.jackpot video {
+  width: 80%;
+}

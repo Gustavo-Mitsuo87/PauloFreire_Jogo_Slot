@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSBET ETEC - Slot Machine</title>
+
+    <link rel="shortcut icon" href="/assets/Icone_da_casa.png" type="image/png">
+
+    <link rel="stylesheet" href="./css/Styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    
+
+</head>
+
+
+
+<body>
+    <header>
+        <h1 class="titulo">SLOT</h1>
+    </header>
+    <div class="carrosel-anuncio">
+        <div class="anuncio">
+            <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide">
+            <img id="img-anuncio" src="./assets/mines.jpeg" class="slide">
+            <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide">
+            <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide">
+
+        </div>
+    </div>
+
+    <div class="container-principal">
+
+        <div class="container-slot">
+
+
+
+            <div class="info">
+
+                <div class="card-saldo">
+                    <p>Saldo: <span id="saldoDisplay">0</span></p>
+                </div>
+
+                <div class="card-mult">
+                    <p>Multiplicador: <span id="multiplicador">1x</span></p>
+                </div>
+
+                <div class="card-aposta">
+                    <p>Aposta: <span id="aposta">0</span></p>
+                </div>
+
+            </div>
+
+
+            <div class="slot">
+
+                <div class="reel"><img id="reel1" src="./assets/cerejinha.webp"></div>
+                <div class="reel"><img id="reel2" src="./assets/Estrela.png"></div>
+                <div class="reel"><img id="reel3" src="./assets/LemonFoot.webp"></div>
+
+            </div>
+
+            <div class="container-time">
+                <p id="timer">3:00</p>
+
+            </div>
+
+            <div class="container-botao">
+
+
+                    <div class="dica-botao-container">
+                        <button class="botao-menos" id="btnMenos">-</button>
+                        <span class="dica-botao-texto">-10 fichas</span>
+                    </div>
+
+                <button class="botao-girar" id="btn-girar">GIRAR</button>
+
+                    <div class="dica-botao-container">
+                        <button class="botao-mais" id="btnMais">+</button>
+                        <span class="dica-botao-texto">+10 fichas</span>
+                    </div>
+                
+            </div>
+
+            <div id="modalFim" class="modal">
+                <div class="modal-content">
+                    <div class="mensagem-modal" id="mensagem">
+                    </div>
+                    <div class="mensagem-modal2" id="mensagem2">
+                    </div>
+
+                    <p class="paragrafo-modal">TENTE NOVAMENTE NA PROXIMA</p>
+                    <button class="btnModal" id="btnVoltar">SAIR</button>
+                    <p class="paragrafo-modal-botao">Clique no botão para continuar</p>
+                </div>
+            </div>
+
+    <footer class="footer">
+        <h2 class="footer-logo">Slot</h2>
+        
+        <div class="footer-content">
+            <p class="footer-text">
+                Projeto desenvolvido exclusivamente para fins educacionais, no âmbito das atividades acadêmicas da ETEC de
+                Guarulhos.
+            </p> 
+
+        <div class="footer-links">
+            <a>Termos</a>
+            <a>Privacidade</a>
+            <a>Suporte</a>
+        </div>
+        
+
+
+      <p class="footer-copy">© 2026 DSBet - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+        </div>
+
+
+    
+</div>
+
+
+
+<div class="carrosel-anuncio">
+        <div class="anuncio2">
+            <img id="img-anuncio" src="./assets/mines.jpeg" class="slide2">
+            <img id="img-anuncio" src="./assets/cards-fortune.jpeg" class="slide2">
+            <img id="img-anuncio" src="./assets/jeffBurger.png" class="slide2">
+            <img id="img-anuncio" src="./assets/jeffCavil.png" class="slide2">
+        </div>
+    </div>
+
+    <div id="efeitoWin" class="efeito-win">
+        <span id="winTexto">2x</span>
+    </div>
+
+<div id="jackpot" class="jackpot">
+  <video id="videoJackpot" muted reload="auto">
+    <source src="./assets/jackpot.mp4" type="video/mp4">
+  </video>
+</div>
+
+   
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<script src="./js/ui.js"></script>
+<script type="module" src="./js/main.js"></script>
+
+</html>
