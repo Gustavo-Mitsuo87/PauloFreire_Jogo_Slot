@@ -2,6 +2,7 @@
 
 @import url('https://googleapis.com');
 
+
 body {
 
   color: white;
@@ -17,14 +18,23 @@ body {
   align-items: center;
   gap: 30px;
 
+  
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
 
 .container-principal{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
+
+  
+ }
 
         
 
@@ -41,6 +51,7 @@ body {
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+
     text-shadow:
         0 0 5px #ffd700,
         0 0 10px #ffcc00,
@@ -60,7 +71,7 @@ body {
   content: "";
     position: absolute;
     top: 50%;
-    width: 710px;
+    width: 750px;
     height: 10px;
     transform: translateY(-50%);
     transform: translateX(-100%);
@@ -79,7 +90,7 @@ body {
     content: "";
     position: absolute;
     top: 50%;
-    width: 710px;
+    width: 720px;
     height: 10px;
     
     background: radial-gradient(circle, #ffd700 4px, transparent 5px);
@@ -103,10 +114,13 @@ body {
 
 .carrosel-anuncio{
   overflow: hidden;
+  flex: 0 0 auto;
 
-  width: 30vh;
-  height: 80vh;
-  margin-top: -37vh;
+  width: 25vh;
+  height: 65vh;
+  margin-top: 16vh;
+  
+
  
 
   box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
@@ -114,9 +128,6 @@ body {
 
   animation: pulsarSombra 0.8s infinite;
   
-
- 
- 
 }
 
 
@@ -130,6 +141,7 @@ body {
   
     display: flex;
     transition: transform 0.5s ease-in-out;
+  
 
 }
 
@@ -140,17 +152,10 @@ body {
 
 
 #img-anuncio{
-  width: 30vh;
-  height: 80vh;
+  width: 25vh;
+  height: 65vh;
   border-radius:10px ;
 }
-
-
-#reel1, #reel2, #reel3 {
-  width: 150px;
-  height: 150px;
-}
-
 
 .container-aposta{
   width: 100px;
@@ -161,9 +166,6 @@ body {
     /*Efeito de vidro (Firula kk)*/
     background: rgba(255, 255, 255, 0.007);
     box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
-    
-    
-
     backdrop-filter: blur( 13.5px );
     -webkit-backdrop-filter: blur( 13.5px );
     border-radius: 10px;
@@ -171,11 +173,11 @@ body {
 
     /*Tamanho da area onde todo o jogo fica*/
     width: 110vh;
-    height: 80vh;
+    height: 65vh;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 70px;
+    margin-top: 16vh;
     
     
 }
@@ -202,13 +204,14 @@ body {
   justify-content: center;
   gap: 20px;
   
+  
   width: 550px;
 
   padding: 30px;
   border-radius: 20px;
 
   /*efeito de profundidade*/
-  background: linear-gradient(145deg, #22222280, #111);
+  background: linear-gradient(145deg, #222222, #111);
   box-shadow: 
     0 0 10px gold,
     inset 0 0 20px #000;
@@ -224,10 +227,15 @@ body {
   background: linear-gradient(#fff, #ddd);
   border: 4px solid gold;
   border-radius: 15px;
+  
+  
 
   display: flex;
+  overflow: hidden;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   font-size: 80px;
 
@@ -236,6 +244,17 @@ body {
     0 0 10px gold;
 
     animation: pulsarSombra 0.5s infinite;
+}
+
+.reel-track {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+}
+
+.imagem_reel {
+  width: 150px;
+  height: 150px;
 }
 
 
@@ -254,6 +273,7 @@ body {
   margin-top: 20px;
 
   font-size: 22px;
+  font-family: Oswald;
   
   
   display: flex;
@@ -280,7 +300,7 @@ body {
   margin-top: 20px;
 
   font-size: 20px;
-  
+  font-family: Oswald;
 
   display: flex;
   justify-content: center;
@@ -311,6 +331,8 @@ body {
   margin-top: 20px;
 
   font-size: 22px;
+
+  font-family: Oswald;
   
 
   display: flex;
@@ -454,6 +476,42 @@ body {
   animation: pulsarSombra-botao-girar 1s infinite;
 }
 
+.dica-botao-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dica-botao-texto {
+  visibility: hidden;
+  width: 120px;
+  font-style: italic;
+  color: #FFD700;
+  
+  text-shadow:
+        0 0 5px #ffd700,
+        0 0 10px #ffcc00,
+        0 0 20px #ffb300;
+    animation: brilhoTitulo 3s linear infinite;
+
+
+  font-weight: bold; 
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Posiciona acima do botão */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s; /* Efeito suave */
+}
+
+.dica-botao-container:hover .dica-botao-texto {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 
 button:hover { /*efeito de crescimento do botão quando passa o mouse*/
@@ -483,41 +541,179 @@ button:active { /*efeito de click no botão*/
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 2, 2, 0.7); 
+    background: rgba(255, 255, 255, 0); 
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background: rgb(0, 0, 0);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+
+    background: rgba(0, 0, 0, 0.653);
+    box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+
+
+    animation: pulsarSombra 1s infinite;
+    
+}
+
+.mensagem-modal{
+  animation: piscar 1s infinite;
+  color: red;
+
+  text-shadow:
+        0 0 5px #ff0000,
+        0 0 10px #ff0000,
+        0 0 20px #ff0000e4;
+ 
+    
+}
+
+.mensagem-modal2{
+  animation: piscar 0.8s infinite;
+  color: rgb(0, 255, 0);
+  font-weight: bold;
+  font-size: 2.5vh;
+
+  text-shadow:
+        0 0 5px #04ff00,
+        0 0 10px #44ff00,
+        0 0 20px #6aff00e4;
+ 
+    
+}
+
+.paragrafo-modal{
+  color: rgba(254, 63, 63, 0.655);
+
+  animation: brilhoTitulo 3s linear infinite;
+
+  font-size: large;
+ 
+
+
+  font-weight: bold;
+  text-shadow:
+        0 0 5px #ff003c7e,
+        0 0 10px #ff00408c,
+        0 0 20px #ff002f56;
+}
+
+.btnModal{
+
+  padding: 10px 30px;
+  font-size: 15px;
+  font-weight: bold;
+  
+  
+
+  background: linear-gradient(#c80000, #960000);
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #641700,
+    0 0 15px #ff0000;
+}
+
+.paragrafo-modal-botao{
+
+   color: rgb(254, 235, 63);
+
+  animation: brilhoTitulo 3s linear infinite;
+
+ 
+
+
+  font-weight: bold;
+  text-shadow:
+        0 0 5px #ffe10084,
+        0 0 10px #f2ff0028,
+        0 0 20px #ffff0014;
+
+}
+
+.footer-logo::before {
+  content: "";
+    position: absolute;
+    
+    margin-top: 12px;
+    width: 750px;
+    height: 10px;
+    transform: translateY(-60%);
+    transform: translateX(-100%);
+
+
+    background: radial-gradient(circle, #ffd700 4px, transparent 5px);
+    background-size: 30px 10px;
+    background-repeat: repeat-x;
+
+    filter: drop-shadow(0 0 5px #ffd700);
+
+    animation: bolinhasAndando 2s linear infinite;
+}
+
+.footer-logo::after {
+    content: "";
+    position: absolute;
+    
+    margin-top: 12px;
+    width: 720px;
+    height: 10px;
+    
+    background: radial-gradient(circle, #ffd700 4px, transparent 5px);
+    background-size: 30px 10px;
+    background-repeat: repeat-x;
+
+    filter: drop-shadow(0 0 5px #ffd700);
+
+    animation: bolinhasAndando 2s linear infinite;
 }
 
 .footer {
-    background: linear-gradient(to top, #000, #1a0000);
-    box-shadow: 
-    0 0 5px #d2c61b,
-    0 0 10px #71702c,
-    0 0 20px #aa8a28;
-
+   
     color: #fff;
     
-    width: 100%;
+    
     padding: 40px 20px;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 21vh;
+    
+}
+
+.footer-content{  
+
+  padding: 10px;
+
+   background: rgba(0, 0, 0, 0.653);
+   box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
+   backdrop-filter: blur( 13.5px );
+   -webkit-backdrop-filter: blur( 13.5px );
+   border-radius: 10px;
+
+
 }
 
 .footer-logo {
+
     font-size: 28px;
     background: linear-gradient(45deg, #d1b917, #ffcc00);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
+    margin-bottom: 10px
+
+
 }
 
 .footer-text {
@@ -545,4 +741,75 @@ button:active { /*efeito de click no botão*/
 .footer-copy {
     font-size: 12px;
     color: #777;
+}
+
+
+.efeito-win {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle, rgba(255,215,0,0.3), rgba(0,0,0,0.9));
+  z-index: 9999;
+}
+
+.efeito-win span {
+  font-size: 120px;
+  color: gold;
+  font-weight: bold;
+
+  text-shadow:
+        0 0 5px #ffd700,
+        0 0 10px #ffcc00,
+        0 0 20px #ffb300;
+
+  white-space: pre-wrap;
+    
+}
+
+/* explosão */
+@keyframes explosao {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes explosao-jackpot {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(5); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.explodir {
+  animation: explosao 0.6s ease;
+}
+
+.explodir-jackpot {
+  animation: explosao 0.6s ease;
+}
+
+
+/* jackpot */
+.jackpot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+  background: black;
+  z-index: 9999;
+}
+
+.jackpot video {
+  width: 80%;
 }
