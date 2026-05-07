@@ -56,6 +56,29 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.botao-sair{
+  position: absolute;
+    left: 90%;
+    top: 33px;
+    
+   background: linear-gradient(#b90505, #903030);
+  color: white;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #641700cf,
+    0 0 10px #ff0000e9;
+
+
+  
+   
+    
+}
+
 
 
 .container-principal{
