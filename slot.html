@@ -5,9 +5,13 @@
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slot</title>
+    <title>DSBET ETEC - Slot Machine</title>
+
+    <link rel="shortcut icon" href="/assets/Icone_da_casa.png" type="image/png">
 
     <link rel="stylesheet" href="./css/Styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    
 
 </head>
 
@@ -51,11 +55,35 @@
 
 
             <div class="slot">
+                <div class="reel">
+                    <div class="reel-track">
+                        <img class="imagem_reel" src="./assets/Uvas.webp">
+                        <img class="imagem_reel" src="./assets/Estrela.png">
+                        <img class="imagem_reel" src="./assets/cerejinha.webp">
+                        <img class="imagem_reel" src="./assets/Icone_da_casa.png">
+                        <img class="imagem_reel" src="./assets/LemonFoot.webp">
+                    </div>
+                </div>
+              
+                <div class="reel">
+                    <div class="reel-track">
+                        <img class="imagem_reel" src="./assets/LemonFoot.webp">
+                        <img class="imagem_reel" src="./assets/Uvas.webp">
+                        <img class="imagem_reel" src="./assets/Estrela.png">
+                        <img class="imagem_reel" src="./assets/cerejinha.webp">
+                        <img class="imagem_reel" src="./assets/Icone_da_casa.png">
+                    </div>
+                </div>
 
-                <div class="reel"><img id="reel1" src="./assets/cerejinha.webp"></div>
-                <div class="reel"><img id="reel2" src="./assets/Estrela.png"></div>
-                <div class="reel"><img id="reel3" src="./assets/LemonFoot.webp"></div>
-
+                <div class="reel">
+                    <div class="reel-track">
+                        <img class="imagem_reel" src="./assets/cerejinha.webp">
+                        <img class="imagem_reel" src="./assets/Icone_da_casa.png">
+                        <img class="imagem_reel" src="./assets/LemonFoot.webp">
+                        <img class="imagem_reel" src="./assets/Uvas.webp">
+                        <img class="imagem_reel" src="./assets/Estrela.png">
+                    </div>
+                </div>
             </div>
 
             <div class="container-time">
@@ -64,41 +92,63 @@
             </div>
 
             <div class="container-botao">
-                <button class="botao-menos" id="btnMenos">-</button>
+
+
+                    <div class="dica-botao-container">
+                        <button class="botao-menos" id="btnMenos">-</button>
+                        <span class="dica-botao-texto">-10 fichas</span>
+                    </div>
+
                 <button class="botao-girar" id="btn-girar">GIRAR</button>
-                <button class="botao-mais" id="btnMais">+</button>
+
+                    <div class="dica-botao-container">
+                        <button class="botao-mais" id="btnMais">+</button>
+                        <span class="dica-botao-texto">+10 fichas</span>
+                    </div>
+                
             </div>
 
             <div id="modalFim" class="modal">
                 <div class="modal-content">
-                    <h2 id="mensagem"></h2>
-                    <p>Sua sessão terminou.</p>
-                    <button id="btnVoltar">Voltar ao início</button>
+                    <div class="mensagem-modal" id="mensagem">
+                    </div>
+                    <div class="mensagem-modal2" id="mensagem2">
+                    </div>
+
+                    <p class="paragrafo-modal">TENTE NOVAMENTE NA PROXIMA</p>
+                    <button class="btnModal" id="btnVoltar">SAIR</button>
+                    <p class="paragrafo-modal-botao">Clique no botão para continuar</p>
                 </div>
             </div>
 
-        </div>
-    
-
     <footer class="footer">
-    <div class="footer-content">
-      <h2 class="footer-logo">Slot</h2>
+        <h2 class="footer-logo">Slot</h2>
+        
+        <div class="footer-content">
+            <p class="footer-text">
+                Projeto desenvolvido exclusivamente para fins educacionais, no âmbito das atividades acadêmicas da ETEC de
+                Guarulhos.
+            </p> 
 
-      <p class="footer-text">
-        Projeto desenvolvido exclusivamente para fins educacionais, no âmbito das atividades acadêmicas da ETEC de
-        Guarulhos.
-      </p>
+        <div class="footer-links">
+            <a>Termos</a>
+            <a>Privacidade</a>
+            <a>Suporte</a>
+        </div>
+        
 
-      <div class="footer-links">
-        <a>Termos</a>
-        <a>Privacidade</a>
-        <a>Suporte</a>
-      </div>
 
       <p class="footer-copy">© 2026 DSBet - Todos os direitos reservados</p>
     </div>
   </footer>
+
+        </div>
+
+
+    
 </div>
+
+
 
 <div class="carrosel-anuncio">
         <div class="anuncio2">
@@ -109,9 +159,21 @@
         </div>
     </div>
 
+    <div id="efeitoWin" class="efeito-win">
+        <span id="winTexto">2x</span>
+    </div>
+
+<div id="jackpot" class="jackpot">
+  <video id="videoJackpot" muted reload="auto">
+    <source src="./assets/jackpot.mp4" type="video/mp4">
+  </video>
+</div>
+
+   
 
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+<script src="./js/effects.js"></script>
 <script src="./js/ui.js"></script>
 <script type="module" src="./js/main.js"></script>
 
