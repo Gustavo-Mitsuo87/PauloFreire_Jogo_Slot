@@ -60,7 +60,8 @@ body::-webkit-scrollbar {
   position: absolute;
     left: 90%;
     top: 33px;
-    
+
+  
    background: linear-gradient(#b90505, #903030);
   color: white;
 
@@ -242,7 +243,7 @@ body::-webkit-scrollbar {
     margin-top: 16vh;
 
     background-color: #1802045d;
-    overflow: hidden;
+   
     position: relative;
     box-shadow: 
 
@@ -1023,11 +1024,19 @@ button:active { /*efeito de click no botão*/
 
   padding: 10px;
 
-   background: rgba(0, 0, 0, 0.653);
-   box-shadow: 0 8px 32px 0 rgba(255, 215, 0);
+   
    backdrop-filter: blur( 13.5px );
    -webkit-backdrop-filter: blur( 13.5px );
    border-radius: 10px;
+
+    background-color: #1802045d;
+   
+   
+    box-shadow: 
+
+    0 0 6px #6b0015,
+    0 0 12px #a00028,
+    0 0 24px #d11a3a;
 
 
 }

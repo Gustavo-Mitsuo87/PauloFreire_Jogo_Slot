@@ -377,8 +377,9 @@ if (btnGirar) {
         if (resultado.ganhou) {
             state.atualizacaoSaldo(true, aposta, resultado.multiplicador);
 
-            
             ativarEfeitoMultiplicador(resultado.multiplicador);
+        } else {
+            state.atualizacaoSaldo(false, aposta, resultado.multiplicador)
         }
         state.salvarEstado();
 
@@ -400,3 +401,7 @@ if (btnGirar) {
         }
     });
 }
+
+document.getElementById("btn-sair").addEventListener("click", () => {
+    fimDeJogo(`<h2>BETINHA!!</h2>`, `<p>Saldo final: ${state.getSaldoAtual()}</p>`);
+});
