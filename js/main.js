@@ -7,16 +7,26 @@ const winTexto = document.getElementById("winTexto");
 const jackpot = document.getElementById("jackpot");
 const video = document.getElementById("videoJackpot");
 
+
+
 function ativarEfeitoMultiplicador(mult) {
     if (mult === 2) { //Quando o multiplicador for 2 ele usa a função efeitoSimples Com o valor da multiplicação
         efeitoSimples(mult);
+        impactarReels();
+        chuvaConfetti();
+        
     } 
     else if (mult === 3) { //Quando o multiplicador for 3 ele usa a função efeitoExplosão Com o valor da multiplicação
         efeitoExplosao(mult);
+        impactarReels();
+        chuvaContinuaConfetti();
+        flashTela();
+        
         
     }  
     else if (mult >= 5) { //Quando o multiplicador for 3ele usa a função efeitoJackpot Com o valor da multiplicação
         efeitoJackpot(mult);
+        
     }
 }
 
@@ -47,7 +57,7 @@ function efeitoExplosao(mult) {
     setTimeout(() => {
         efeitoWin.style.display = "none";
         winTexto.classList.remove("explodir");
-    }, 1000);
+    }, 5500);
 }
 
 //Função efeitoJackpot, o conteudo de winTexto é substituido pelo valor da mult com um "X"
@@ -64,6 +74,9 @@ function efeitoJackpot() {
         jackpot.style.display = "none";
 
         winTexto.textContent = "JACKPOT \n5X";
+        flashTela();
+        chuvaContinuaConfettiJackpot();
+
         efeitoWin.style.display = "flex";
 
         winTexto.classList.add("explodir-jackpot");
@@ -72,8 +85,151 @@ function efeitoJackpot() {
             efeitoWin.style.display = "none";
             winTexto.classList.remove("explodir")
 
-        }, 2000)
+        }, 7000)
     }, 8000);
+}
+
+function tremerTela() {
+    document.body.classList.add("shake-screen");
+
+    setTimeout(() => {
+        document.body.classList.remove("shake-screen");
+    }, 600);
+}
+
+
+
+function chuvaConfetti() {
+    confetti({
+        particleCount: 600,
+        spread: 360,
+        startVelocity: 70,
+        gravity: 0.7,
+        scalar: 1.5,
+
+        colors: [
+            '#FFD700',
+            '#ff0000',
+            '#ffffff',
+            '#ffae00'
+        ],
+        shapes: ['circle'],
+
+        origin: {
+            x: 0.5,
+            y: 0.5
+        }
+
+    });
+}
+function chuvaContinua() {
+
+    const duration = 5000;
+    const end = Date.now() + duration;
+
+    const interval = setInterval(() => {
+
+        if (Date.now() > end) {
+            clearInterval(interval);
+            return;
+        }
+
+        confetti({
+            particleCount: 20,
+            spread: 120,
+            origin: {
+                x: Math.random(),
+                y: Math.random() - 0.2
+            }
+        });
+
+    }, 200);
+}
+function chuvaContinuaConfetti() {
+     const duration = 7000;
+    const end = Date.now() + duration;
+
+    const interval = setInterval(() => {
+
+        if (Date.now() > end) {
+            clearInterval(interval);
+            return;
+        }
+
+        confetti({
+            particleCount: 100,
+            spread: 360,
+
+            colors: [
+            '#FFD700',
+            '#ff0000',
+            '#ffffff',
+            '#ffae00'
+        ],
+
+
+            shapes: ['circle'],
+            origin: {
+                x: Math.random(),
+                y: Math.random() - 0.2
+            }
+        });
+
+    }, 200);
+}
+function chuvaContinuaConfettiJackpot() {
+     const duration = 5000;
+    const end = Date.now() + duration;
+
+    const interval = setInterval(() => {
+
+        if (Date.now() > end) {
+            clearInterval(interval);
+            return;
+        }
+
+        confetti({
+            particleCount: 600,
+            spread: 360,
+            shapes: ['circle'],
+
+            colors: [
+            '#FFD700',
+            '#ff0000',
+            '#ffffff',
+            '#ffae00'
+        ],
+
+        
+            origin: {
+                x: Math.random(),
+                y: Math.random() - 0.2
+            }
+        });
+
+    }, 200);
+}
+
+const flashWin = document.getElementById("flashWin");
+
+function flashTela() {
+    flashWin.classList.add("flash-ativo");
+
+    setTimeout(() => {
+        flashWin.classList.remove("flash-ativo");
+    }, 400);
+}
+
+function impactarReels() {
+    const reels = document.querySelectorAll(".reel");
+
+    reels.forEach(reel => {
+        reel.classList.add("reel-impact");
+
+        setTimeout(() => {
+            reel.classList.remove("reel-impact");
+        }, 500);
+    });
 }
 
 
