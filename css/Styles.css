@@ -3,6 +3,7 @@
 
 
 
+
 body {
 
   color: white;
@@ -213,13 +214,6 @@ body::-webkit-scrollbar {
   border-radius:10px ;
 }
 
-
-#reel1, #reel2, #reel3 {
-  width: 150px;
-  height: 150px;
-}
-
-
 .container-aposta{
   width: 100px;
   height: 300px;
@@ -277,6 +271,7 @@ body::-webkit-scrollbar {
 
   border: 5px solid transparent;
   
+  
   width: 550px;
 
   padding: 30px;
@@ -309,10 +304,15 @@ body::-webkit-scrollbar {
 
   border: 4px solid transparent;
   border-radius: 15px;
+  
+  
 
   display: flex;
+  overflow: hidden;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 
  
    background:
@@ -325,6 +325,17 @@ body::-webkit-scrollbar {
 
 @keyframes girarBordaReel {
   to { --a: -360deg; }
+}
+
+.reel-track {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+}
+
+.imagem_reel {
+  width: 150px;
+  height: 150px;
 }
 
 

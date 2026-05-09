@@ -271,13 +271,139 @@ if (window.location.pathname.includes("slot.html")) {
     state.carregarEstado();
 }
 
+// ELEMENTOS
+const saldoEl = document.getElementById("saldoDisplay");
+const apostaEl = document.getElementById("aposta");
+const multEl = document.getElementById("multiplicador");
 
-const saldoEl = document.getElementById("saldoDisplay"); // Card da aposta
+// inicializa saldo
 if (saldoEl) {
     saldoEl.textContent = state.getSaldoAtual();
 }
 
-// temporizador
+// =======================
+// APOSTA
+// =======================
+let apostaNum = 10;
+let apostaRodada = 0;
+
+if (apostaEl) {
+    apostaEl.textContent = apostaNum;
+}
+
+const btnMenos = document.getElementById("btnMenos");
+const btnMais = document.getElementById("btnMais");
+
+if (btnMenos) {
+    btnMenos.addEventListener("click", () => {
+        if (apostaNum - 10 >= 10) {
+            apostaNum -= 10;
+            apostaEl.textContent = apostaNum;
+        }
+    });
+}
+
+if (btnMais) {
+    btnMais.addEventListener("click", () => {
+        if (apostaNum + 10 <= state.getSaldoAtual()) {
+            apostaNum += 10;
+            apostaEl.textContent = apostaNum;
+        }
+    });
+}
+
+// =======================
+// GIRAR
+// =======================
+const btnGirar = document.getElementById("btn-girar");
+
+let resultadoAtual = null;
+
+if (btnGirar) {
+    btnGirar.addEventListener("click", () => {
+
+        if (apostaNum < 10) {
+            alert("Aposta mínima é 10!");
+            return;
+        }
+
+        // desconta saldo
+        if (!state.rodada(apostaNum)) {
+            fimDeJogo(`<h2>💸 Saldo insuficiente!</h2>`);
+            return;
+        }
+
+
+        if (saldoEl) {
+            saldoEl.textContent = state.getSaldoAtual();
+        }
+
+        state.salvarEstado();
+
+        apostaRodada = apostaNum;
+
+        resultadoAtual = girar();
+        window.setResultado(resultadoAtual);
+    });
+}
+
+// =======================
+// FINAL ANIMAÇÃO
+// =======================
+document.addEventListener("fimAnimacao", () => {
+
+    if (!resultadoAtual) return;
+
+    if (resultadoAtual.ganhou) {
+        state.atualizacaoSaldo(true, apostaRodada, resultadoAtual.multiplicador);
+    } else {
+        state.atualizacaoSaldo(false, apostaRodada, 1)
+    }
+
+    state.salvarEstado();
+
+    if (saldoEl) {
+        saldoEl.textContent = state.getSaldoAtual();
+    }
+
+    if (multEl) {
+        multEl.textContent = resultadoAtual.multiplicador + "x";
+    }
+
+    if (state.getSaldoAtual() <= 0) {
+        fimDeJogo(`
+            <h2>💀 Já era pro betinha!</h2>
+            <p>Saldo final: ${state.getSaldoAtual()}</p>
+        `);
+    }
+
+    resultadoAtual = null;
+});
+
+// =======================
+// MODAL
+// =======================
+function fimDeJogo(mensagem, mensagem2) {
+    const modal = document.getElementById("modalFim");
+    const mensagemEl = document.getElementById("mensagem");
+    const mensagemEl2 = document.getElementById("mensagem2");
+
+
+    if (modal) {
+        modal.style.display = "flex";
+    }
+    if (mensagemEl && mensagemEl2) {
+        mensagemEl.innerHTML = mensagem;
+        mensagemEl2.innerHTML = mensagem2;
+    }
+    // bloquear cliques
+    document.body.style.pointerEvents = "none";
+    modal.style.pointerEvents = "all";
+}
+
+// =======================
+// TIMER
+// =======================
 const timer = document.getElementById("timer");
 if (timer) {
     let tempo = 180;
@@ -303,113 +429,3 @@ if (timer) {
         }
     }, 1000);
 }
-
-function fimDeJogo(mensagem, mensagem2) {
-    const modal = document.getElementById("modalFim");
-    const mensagemEl = document.getElementById("mensagem");
-    const mensagemEl2 = document.getElementById("mensagem2");
-
-
-    if (modal) {
-        modal.style.display = "flex";
-    }
-    if (mensagemEl && mensagemEl2) {
-        mensagemEl.innerHTML = mensagem;
-        mensagemEl2.innerHTML = mensagem2;
-    }
-    // bloquear cliques
-    document.body.style.pointerEvents = "none";
-    modal.style.pointerEvents = "all";
-}
-
-const btnVoltar = document.getElementById("btnVoltar"); // só aparece no modal 
-if (btnVoltar) {
-    btnVoltar.addEventListener("click", () => {
-        state.reset();
-        window.location.href = "index.html";
-    });
-}
-
-const btnMenos = document.getElementById("btnMenos");
-const btnMais = document.getElementById("btnMais");
-let apostaNum = 10;
-const apostaEl = document.getElementById("aposta");
-
-if (apostaEl) {
-    apostaEl.textContent = apostaNum;
-}
-
-if (btnMenos) {
-    btnMenos.addEventListener("click", () => {
-        if (apostaNum > 10) {
-            apostaNum -= 10;
-            if (apostaEl) {
-                apostaEl.textContent = apostaNum;
-            }
-        }
-    });
-}
-
-if (btnMais) {
-    btnMais.addEventListener("click", () => {
-        if (apostaNum + 10 <= state.getSaldoAtual()) {
-            apostaNum += 10;
-            if (apostaEl) {
-                apostaEl.textContent = apostaNum;
-            }
-        }
-    });
-}
-
-// botão girar aqui na main
-const btnGirar = document.getElementById("btn-girar");
-
-if (btnGirar) {
-    btnGirar.addEventListener("click", () => {
-        const aposta = apostaNum;
-        const multEl = document.getElementById("multiplicador");
-
-        // valida aposta mínima
-        if (aposta < 10) {
-            alert("Aposta mínima é 10!");
-            return;
-        }
-
-        if (!state.rodada(aposta)) { // valida o saldo e desconta do viciado
-            alert ("Aposta acima do saldo");
-            return;
-        }
-
-        const resultado = girar();
-
-        if (resultado.ganhou) {
-            state.atualizacaoSaldo(true, aposta, resultado.multiplicador);
-
-            ativarEfeitoMultiplicador(resultado.multiplicador);
-        } else {
-            state.atualizacaoSaldo(false, aposta, resultado.multiplicador)
-        }
-        state.salvarEstado();
-
-        if (saldoEl) {
-            saldoEl.textContent = state.getSaldoAtual();
-        }
-
-        // atualiza multiplicador
-        if (multEl) {
-            multEl.textContent = resultado.multiplicador + "x";
-        }
-
-        // fim de jogo
-        if (state.getSaldoAtual() <= 0) {
-            fimDeJogo(`
-                <h2>! SALDO INSUFICIENTE !</h2>`,
-                `<p>Saldo final: ${state.getSaldoAtual()}</p>
-            `);
-        }
-    });
-}
-
-document.getElementById("btn-sair").addEventListener("click", () => {
-    fimDeJogo(`<h2>BETINHA!!</h2>`, `<p>Saldo final: ${state.getSaldoAtual()}</p>`);
-});

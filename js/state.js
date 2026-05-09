@@ -58,7 +58,6 @@ function rodada(aposta) { // aposta digitada pelo usuario
         return false; // nesse caso já era pro betinha
     } else {
         if (aposta <= saldoAtual) {
-            // saldoAtual -= aposta;
             contaRodada += 1;
             salvarEstado();
             return true;
