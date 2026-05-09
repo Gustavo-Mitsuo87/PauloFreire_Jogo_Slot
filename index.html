@@ -3,29 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nome</title>
+    <title>DSBET ETEC - Formulario Slot</title>
     <link rel="stylesheet" href="./css/styleEntrada.css">
+    <link rel="shortcut icon" href="/assets/Icone_da_casa.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
 
-<body>
-    
-  <div>
-  <h1 class="Titulo"> Bem-vindo ao Slot</h1>
-  <h1 class="Titulo"> O melhor Cassino para jogar</h1>
-  </div>
 
-  <h2 class="Subtitulo"> Entre com seu nome e saldo para começar a jogar</h2>
+<body>
+  
+ 
+ 
+  <header>
+    <h1 class="titulo">SLOT</h1>
+  </header>
+ 
+  <div class="fundo-container">
+            <div class="fundo-carrossel">
+                <img class="fundo" src="./assets/fundo-slot.png" alt="Fundo">
+                <img class="fundo" src="./assets/fundo-slot.png" alt="Fundo">
+            </div>
+        </div>
 
     <main class="Page">
         <section class="card">
+          <div class="logo">
+            <img class="logo-bet" src="./assets/Icone_da_casa.png">
+            <img class="logo-bet" src="./assets/Logo Slot.png">
+          </div>
+          
 
                   <div class="card-nome">
                     <form class="card-nome">
                           <p class="SaldoMin"> Saldo Mínimo: 10 fichas</p>
-                          <input placeholder="Digite o seu Nome" type="text" name="nome" id="name">
                           
-                          <input placeholder="Digite o seu saldo(Ex: 10, 20, 50)" type="number" min="10" step="10" name="saldo" id="saldoInput">
+
+                           <div class="form-control">
+                             <input type="text" required="" id="name" autocomplete="off">
+                                <label>
+                                    <span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">o</span><span style="transition-delay:100ms">m</span><span style="transition-delay:150ms">e</span>
+                                </label>
+                          </div>
+                          
+                          <div class="form-control">
+                             <input type="number" required="" id="saldoInput" autocomplete="off">
+                                <label>
+                                    <span style="transition-delay:0ms">S</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">l</span><span style="transition-delay:150ms">d</span><span style="transition-delay:200ms">o</span>
+                                </label>
+                          </div>
 
                           <button type="button" id="btnEntrar">Entrar no Jogo</button>
                           
@@ -37,7 +64,7 @@
 
     </main>
 
-  <footer class="footer">
+  <footer class="footer"> 
     <div class="footer-content">
       <h2 class="footer-logo">Slot</h2>
 
@@ -56,5 +83,7 @@
     </div>
   </footer>
 <script type="module" src="./js/main.js"></script>
+
+
 </body>
 </html>

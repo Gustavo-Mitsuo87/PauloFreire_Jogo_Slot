@@ -18,8 +18,18 @@
 
 
 <body>
+
+
+    <div class="fundo-container">
+            <div class="fundo-carrossel">
+                <img class="fundo" src="./assets/fundo-slot.png" alt="Fundo">
+                <img class="fundo" src="./assets/fundo-slot.png" alt="Fundo">
+            </div>
+        </div>
+
     <header>
         <h1 class="titulo">SLOT</h1>
+        <button class="botao-sair" id="btn-sair">Sair</button>
     </header>
     <div class="carrosel-anuncio">
         <div class="anuncio">
@@ -31,11 +41,12 @@
         </div>
     </div>
 
+
+
     <div class="container-principal">
-
+        
         <div class="container-slot">
-
-
+            
 
             <div class="info">
 
@@ -43,7 +54,7 @@
                     <p>Saldo: <span id="saldoDisplay">0</span></p>
                 </div>
 
-                <div class="card-mult">
+                <div class="card-mult" id="cardMult">
                     <p>Multiplicador: <span id="multiplicador">1x</span></p>
                 </div>
 
@@ -176,5 +187,6 @@
 <script src="./js/effects.js"></script>
 <script src="./js/ui.js"></script>
 <script type="module" src="./js/main.js"></script>
+<script src="./js/tutorial.js"></script>
 
 </html>
