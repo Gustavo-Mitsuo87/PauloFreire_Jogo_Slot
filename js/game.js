@@ -55,7 +55,7 @@ function girar() {
       img1.src = randomChoice(img_comuns);
       img2.src = randomChoice(img_medias);
       img3.src = img_jackpot[0];
-      return { ganhou: false, multiplicador: 0 }; //Mitsuo que adcionou
+      return { ganhou: false, multiplicador: 1 }; //Mitsuo que adcionou
       break;
     //Aqui ele sorteia 2 números aleatórios, mas eu garanto que eles sejam diferentes para que não tenha 3 imagens iguais e o sistema entender que foi uma quase vitória
     case "Quase-vitória":
@@ -72,7 +72,7 @@ function girar() {
       img1.src = imagens_src[embaralhar[0]];
       img2.src = imagens_src[embaralhar[1]];
       img3.src = imagens_src[embaralhar[2]];
-      return { ganhou: false, multiplicador: 0 }; //Mitsuo que adcionou
+      return { ganhou: false, multiplicador: 1 }; //Mitsuo que adcionou
       break;
 
     case "Vitória pequena":
