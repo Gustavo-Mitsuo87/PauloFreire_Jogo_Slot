@@ -48,6 +48,7 @@ function atualizacaoSaldo(result, valor, multiplicador) { //vai receber se houve
         saldoAtual = saldoAtual + (valor * multiplicador);
         return saldoAtual;
     } else {
+        saldoAtual -= valor;
         return saldoAtual;
     }
 }
@@ -57,7 +58,6 @@ function rodada(aposta) { // aposta digitada pelo usuario
         return false; // nesse caso já era pro betinha
     } else {
         if (aposta <= saldoAtual) {
-            saldoAtual -= aposta;
             contaRodada += 1;
             salvarEstado();
             return true;
