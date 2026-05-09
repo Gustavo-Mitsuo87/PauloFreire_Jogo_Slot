@@ -254,6 +254,14 @@ input{
     
 }
 
+#saldoInput::-webkit-outer-spin-button,
+#saldoInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
 .form-control {
   position: relative;
   margin: 20px 0 40px;
@@ -356,11 +364,14 @@ button:hover::after {
 }
 
 .footer {
-    background: linear-gradient(to top, #000, #1a0000);
+       background-color: #180204dd;
+   
+   border-radius: 10px;
     box-shadow: 
-    0 0 5px #d2c61b,
-    0 0 10px #71702c,
-    0 0 20px #aa8a28;
+
+    0 0 6px #6b0015,
+    0 0 12px #a00028,
+    0 0 24px #d11a3a;
     
     color: #fff;
     
