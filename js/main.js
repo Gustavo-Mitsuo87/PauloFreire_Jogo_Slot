@@ -14,6 +14,7 @@ function ativarEfeitoMultiplicador(mult) {
         efeitoSimples(mult);
         impactarReels();
         chuvaConfetti();
+        efeitoPulsarSimples()
         
     } 
     else if (mult === 3) { //Quando o multiplicador for 3 ele usa a função efeitoExplosão Com o valor da multiplicação
@@ -21,6 +22,7 @@ function ativarEfeitoMultiplicador(mult) {
         impactarReels();
         chuvaContinuaConfetti();
         flashTela();
+        efeitoPulsarSimples()
         
         
     }  
@@ -57,7 +59,7 @@ function efeitoExplosao(mult) {
     setTimeout(() => {
         efeitoWin.style.display = "none";
         winTexto.classList.remove("explodir");
-    }, 5500);
+    }, 2000);
 }
 
 //Função efeitoJackpot, o conteudo de winTexto é substituido pelo valor da mult com um "X"
@@ -89,33 +91,25 @@ function efeitoJackpot() {
     }, 8000);
 }
 
-function tremerTela() {
-    document.body.classList.add("shake-screen");
-
-    setTimeout(() => {
-        document.body.classList.remove("shake-screen");
-    }, 600);
-}
-
 
 
 function chuvaConfetti() {
     confetti({
-        particleCount: 600,
-        spread: 360,
-        startVelocity: 70,
-        gravity: 0.7,
-        scalar: 1.5,
+        particleCount: 300, // Quantidade de confetti
+        spread: 360, // Amplitude angular dos confetti
+        startVelocity: 70, // Velocidade que ele irá lançar os confetti
+        gravity: 0.7, //Gravidade do confetti quanto maior mais rapido quanto menor mais lento
+        scalar: 1.5, // Tamanho dos confetti 
 
-        colors: [
+        colors: [ // Cor dos confetti
             '#FFD700',
             '#ff0000',
             '#ffffff',
             '#ffae00'
         ],
-        shapes: ['circle'],
+        shapes: ['circle'], // Formato dos confetti
 
-        origin: {
+        origin: { //Origem que eles serão lançados
             x: 0.5,
             y: 0.5
         }
@@ -124,21 +118,21 @@ function chuvaConfetti() {
 }
 function chuvaContinua() {
 
-    const duration = 5000;
-    const end = Date.now() + duration;
+    const duration = 5000; // Duração da chuva
+    const end = Date.now() + duration; // Quando será finalizado a chuva
 
     const interval = setInterval(() => {
 
-        if (Date.now() > end) {
+        if (Date.now() > end) { // Se a data atual for maior ele limpa o intervalo e para os confetti
             clearInterval(interval);
             return;
         }
 
-        confetti({
-            particleCount: 20,
-            spread: 120,
-            origin: {
-                x: Math.random(),
+        confetti({ 
+            particleCount: 20, // Quntidade de particula de confetti
+            spread: 120, // raio dos confetti
+            origin: { // Origem dos confeti. Aleatória deixar mais divertido e ele se espalhar pela tela
+                x: Math.random(), 
                 y: Math.random() - 0.2
             }
         });
@@ -200,7 +194,7 @@ function chuvaContinuaConfettiJackpot() {
             '#ffae00'
         ],
 
-        
+
             origin: {
                 x: Math.random(),
                 y: Math.random() - 0.2
@@ -231,6 +225,20 @@ function impactarReels() {
         }, 500);
     });
 }
+
+const cardMult = document.getElementById("cardMult")
+
+function efeitoPulsarSimples() {
+    cardMult.classList.add("efeitoPulsarSimples");
+
+    setTimeout(() =>{
+        cardMult.classList.remove("efeitoPulsarSimples");
+    }, 2000)
+
+}
+
+
+
 
 
 

@@ -54,7 +54,7 @@
                     <p>Saldo: <span id="saldoDisplay">0</span></p>
                 </div>
 
-                <div class="card-mult">
+                <div class="card-mult" id="cardMult">
                     <p>Multiplicador: <span id="multiplicador">1x</span></p>
                 </div>
 
@@ -157,11 +157,26 @@
 </div>
 
     <div id="flashWin" class="flash-win"></div>
-</body>
 
+
+    <div id="tutorialOverlay">
+
+    <div id="tutorialElementoBox"></div>
+
+    <div id="tutorialBox">
+        <div id="tutorialArrow"></div>
+        <div id="tutorialArrowTriangulo"></div>
+        
+        <p id="tutorialTexto"></p>
+    </div>
+
+</div>
+</body>
+<script src="./js/effects.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
 <script src="./js/ui.js"></script>
 <script type="module" src="./js/main.js"></script>
+<script src="./js/tutorial.js"></script>
 
 </html>
