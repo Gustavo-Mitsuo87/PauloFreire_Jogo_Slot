@@ -328,8 +328,8 @@ if (btnGirar) {
         }
 
         // desconta saldo
-        if (!state.rodada(apostaNum)) {
-            fimDeJogo(`<h2>💸 Saldo insuficiente!</h2>`);
+        if (!state.rodada(apostaNum)) { // valida o saldo e desconta do viciado
+            alert ("Aposta acima do saldo");
             return;
         }
 
@@ -356,6 +356,7 @@ document.addEventListener("fimAnimacao", () => {
 
     if (resultadoAtual.ganhou) {
         state.atualizacaoSaldo(true, apostaRodada, resultadoAtual.multiplicador);
+        ativarEfeitoMultiplicador(resultado.multiplicador);
     } else {
         state.atualizacaoSaldo(false, apostaRodada, 1)
     }
@@ -372,7 +373,7 @@ document.addEventListener("fimAnimacao", () => {
 
     if (state.getSaldoAtual() <= 0) {
         fimDeJogo(`
-            <h2>💀 Já era pro betinha!</h2>
+            <h2>💀 Já era pro betinha!</h2>,
             <p>Saldo final: ${state.getSaldoAtual()}</p>
         `);
     }
@@ -399,6 +400,14 @@ function fimDeJogo(mensagem, mensagem2) {
     // bloquear cliques
     document.body.style.pointerEvents = "none";
     modal.style.pointerEvents = "all";
+}
+
+const btnVoltar = document.getElementById("btnVoltar"); // só aparece no modal 
+if (btnVoltar) {
+    btnVoltar.addEventListener("click", () => {
+        state.reset();
+        window.location.href = "index.html";
+    });
 }
 
 // =======================
@@ -429,3 +438,8 @@ if (timer) {
         }
     }, 1000);
 }
+
+
+document.getElementById("btn-sair").addEventListener("click", () => {
+    fimDeJogo(`<h2>BETINHA!!</h2>`, `<p>Saldo final: ${state.getSaldoAtual()}</p>`);
+});
