@@ -356,7 +356,7 @@ document.addEventListener("fimAnimacao", () => {
 
     if (resultadoAtual.ganhou) {
         state.atualizacaoSaldo(true, apostaRodada, resultadoAtual.multiplicador);
-        ativarEfeitoMultiplicador(resultado.multiplicador);
+        ativarEfeitoMultiplicador(resultadoAtual.multiplicador);
     } else {
         state.atualizacaoSaldo(false, apostaRodada, 1)
     }
@@ -373,8 +373,8 @@ document.addEventListener("fimAnimacao", () => {
 
     if (state.getSaldoAtual() <= 0) {
         fimDeJogo(`
-            <h2>💀 Já era pro betinha!</h2>,
-            <p>Saldo final: ${state.getSaldoAtual()}</p>
+            <h2>! SALDO INSUFICIENTE !</h2>`,
+            `<p>Saldo final: ${state.getSaldoAtual()}</p>
         `);
     }
 
@@ -441,5 +441,5 @@ if (timer) {
 
 
 document.getElementById("btn-sair").addEventListener("click", () => {
-    fimDeJogo(`<h2>BETINHA!!</h2>`, `<p>Saldo final: ${state.getSaldoAtual()}</p>`);
+    fimDeJogo(`<h2>VOCÊ DESISTIU SEU BETINHA!!!</h2>`, `<p>Saldo final: ${state.getSaldoAtual()}</p>`);
 });
