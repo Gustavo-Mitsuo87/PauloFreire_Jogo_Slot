@@ -150,6 +150,7 @@ main{
 .card{
     
     width: 60vh;
+    height: 65vh;
     max-width: 90%;
     padding: 50px 40px;
     
