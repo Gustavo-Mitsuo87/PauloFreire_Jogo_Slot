@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 30 px;
 
   background: radial-gradient(circle at top, #31000a, #0a0a0a);
   
@@ -88,6 +88,8 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 120vh;
+
 
   
  }
@@ -172,7 +174,7 @@ body::-webkit-scrollbar {
   overflow: hidden;
   flex: 0 0 auto;
 
-  width: 20vh;
+  width: 25vh;
   height: 70vh;
   margin-top: 16vh;
   
@@ -209,7 +211,7 @@ body::-webkit-scrollbar {
 
 
 #img-anuncio{
-  width: 20vh;
+  width: 25vh;
   height: 70vh;
   border-radius:10px ;
 }
