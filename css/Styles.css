@@ -172,8 +172,8 @@ body::-webkit-scrollbar {
   overflow: hidden;
   flex: 0 0 auto;
 
-  width: 25vh;
-  height: 65vh;
+  width: 20vh;
+  height: 70vh;
   margin-top: 16vh;
   
 
@@ -209,8 +209,8 @@ body::-webkit-scrollbar {
 
 
 #img-anuncio{
-  width: 25vh;
-  height: 65vh;
+  width: 20vh;
+  height: 70vh;
   border-radius:10px ;
 }
 
@@ -229,8 +229,8 @@ body::-webkit-scrollbar {
      border-radius: 10px;    
 
     /*Tamanho da area onde todo o jogo fica*/
-    width: 110vh;
-    height: 65vh;
+    width: 100vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     flex-direction: column;
