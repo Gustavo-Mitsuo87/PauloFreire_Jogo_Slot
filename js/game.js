@@ -3,10 +3,10 @@ import { randomChoice } from "./utils.js";
 function roletar_tipo() {
   let tipo = Math.floor(Math.random() * 100);
 
-  if (tipo < 30) return "Perda total";
-  if (tipo < 60) return "Quase-vitória";
-  if (tipo < 80) return "Vitória pequena";
-  if (tipo < 95) return "Vitória Média";
+  if (tipo < 20) return "Perda total";
+  if (tipo < 85) return "Quase-vitória";
+  if (tipo < 95) return "Vitória pequena";
+  if (tipo < 99) return "Vitória Média";
   return "JACKPOT";
 }
 
