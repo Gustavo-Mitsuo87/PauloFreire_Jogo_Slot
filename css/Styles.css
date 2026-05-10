@@ -11,8 +11,9 @@ body {
   font-family: Arial;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 30px;
+  padding-top: 20px;
 
   background: radial-gradient(circle at top, #31000a, #0a0a0a);
   
@@ -100,7 +101,7 @@ body::-webkit-scrollbar {
     top: -8px;
     transform: translateX(-50%);
     font-family: 'Great Vibes', cursive !important;
-    font-size: 34px;
+    font-size: clamp(24px, 5vw, 40px);
     background: linear-gradient(90deg, #fff3a0, #ffd700, #ffb300, #fff3a0);
     background-size: 200%;
     background-clip: text;
@@ -220,8 +221,10 @@ body::-webkit-scrollbar {
 }
 
 .container-slot {
-    /*Efeito de vidro (Firula kk)*/
-   
+  
+    width: 70vw;
+    max-width: 1100px;
+    min-width: 800px;
    
     backdrop-filter: blur( 13.5px );
     -webkit-backdrop-filter: blur( 13.5px );
@@ -229,7 +232,7 @@ body::-webkit-scrollbar {
      border-radius: 10px;    
 
     /*Tamanho da area onde todo o jogo fica*/
-    width: 100vh;
+    
     height: 70vh;
     display: flex;
     align-items: center;
@@ -272,7 +275,8 @@ body::-webkit-scrollbar {
   border: 5px solid transparent;
   
   
-  width: 550px;
+width: 100%;
+   max-width: 700px;
 
   padding: 30px;
   border-radius: 20px;
@@ -299,8 +303,8 @@ body::-webkit-scrollbar {
 
 
 .reel { /*quadrado das figuras do slot*/
-  width: 175px;
-  height: 175px;
+  width: clamp(110px, 12vw, 175px);
+   height: clamp(110px, 12vw, 175px);
 
   border: 4px solid transparent;
   border-radius: 15px;
@@ -334,8 +338,8 @@ body::-webkit-scrollbar {
 }
 
 .imagem_reel {
-  width: 150px;
-  height: 150px;
+   width: 85%;
+   height: auto;
 }
 
 
@@ -1335,3 +1339,39 @@ transform: scale(1.1);
  
 
 
+@media (max-width: 1366px){
+
+    body{
+        gap: 0;
+        overflow-x: hidden;
+    }
+
+    .container-slot{
+        transform: scale(0.82);
+        transform-origin: top center;
+    }
+
+     .carrosel-anuncio{
+        transform: scale(0.82);
+        transform-origin: top center;
+    }
+
+}
+
+@media (max-width: 1600px){
+
+  body{
+        gap: 0;
+        overflow-x: hidden;
+    }
+    .container-slot{
+        transform: scale(0.90);
+        transform-origin: top center;
+    }
+
+    .carrosel-anuncio{
+        transform: scale(0.90);
+        transform-origin: top center;
+    }
+
+}
