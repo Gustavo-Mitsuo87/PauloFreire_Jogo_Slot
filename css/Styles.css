@@ -994,7 +994,7 @@ button:active { /*efeito de click no botão*/
     position: absolute;
     
     margin-top: 12px;
-    width: 750px;
+    width: 850px;
     height: 10px;
     transform: translateY(-60%);
     transform: translateX(-100%);
@@ -1014,7 +1014,7 @@ button:active { /*efeito de click no botão*/
     position: absolute;
     
     margin-top: 12px;
-    width: 720px;
+    width: 820px;
     height: 10px;
     
     background: radial-gradient(circle, #ffd700 4px, transparent 5px);
@@ -1033,7 +1033,7 @@ button:active { /*efeito de click no botão*/
     
     padding: 40px 20px;
     text-align: center;
-    margin-top: 21vh;
+    margin-top: 25vh;
     
 }
 

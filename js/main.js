@@ -183,7 +183,7 @@ function chuvaContinuaConfettiJackpot() {
         }
 
         confetti({
-            particleCount: 450,
+            particleCount: 50,
             spread: 360,
             shapes: ['circle'],
 
