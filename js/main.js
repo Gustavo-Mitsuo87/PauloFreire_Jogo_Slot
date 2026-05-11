@@ -59,7 +59,7 @@ function efeitoExplosao(mult) {
     setTimeout(() => {
         efeitoWin.style.display = "none";
         winTexto.classList.remove("explodir");
-    }, 2000);
+    }, 2500);
 }
 
 //Função efeitoJackpot, o conteudo de winTexto é substituido pelo valor da mult com um "X"
@@ -140,7 +140,7 @@ function chuvaContinua() {
     }, 200);
 }
 function chuvaContinuaConfetti() {
-     const duration = 7000;
+     const duration = 2500;
     const end = Date.now() + duration;
 
     const interval = setInterval(() => {
