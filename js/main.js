@@ -323,6 +323,22 @@ window.ativarEfeitoMultiplicador = ativarEfeitoMultiplicador;
 
 window.fimDeJogo = fimDeJogo;
 
+function salvarDadosNoBanco() {
+    const dados = {
+        nome: state.defineNome,
+        saldo_inicial: state.getSaldoInicio,
+        saldo_atual: state.getSaldoAtual
+    };
+
+    fetch('salvar.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados)
+    })
+    .then(res => res.json())
+    .then(json => console.log("Dados registrados com sucesso!"))
+    .catch(err => console.error("Erro ao salvar:", err));
+}
 
 // =======================
 // MODAL
@@ -343,6 +359,8 @@ function fimDeJogo(mensagem, mensagem2) {
     // bloquear cliques
     document.body.style.pointerEvents = "none";
     modal.style.pointerEvents = "all";
+
+    salvarDadosNoBanco();
 }
 
 const btnVoltar = document.getElementById("btnVoltar"); // só aparece no modal 
