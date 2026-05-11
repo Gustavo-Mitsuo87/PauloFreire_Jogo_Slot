@@ -313,73 +313,16 @@ if (btnMais) {
 }
 
 // =======================
-// GIRAR
+// Controller
 // =======================
-const btnGirar = document.getElementById("btn-girar");
+window.getAposta = function () { // Expõe funções para o game-controller.js usar
+    return apostaNum;
+};
 
-let resultadoAtual = null;
+window.ativarEfeitoMultiplicador = ativarEfeitoMultiplicador;
 
-if (btnGirar) {
-    btnGirar.addEventListener("click", () => {
+window.fimDeJogo = fimDeJogo;
 
-        if (apostaNum < 10) {
-            alert("Aposta mínima é 10!");
-            return;
-        }
-
-        // desconta saldo
-        if (!state.rodada(apostaNum)) { // valida o saldo e desconta do viciado
-            alert ("Aposta acima do saldo");
-            return;
-        }
-
-
-        if (saldoEl) {
-            saldoEl.textContent = state.getSaldoAtual();
-        }
-
-        state.salvarEstado();
-
-        apostaRodada = apostaNum;
-
-        resultadoAtual = girar();
-        window.setResultado(resultadoAtual);
-    });
-}
-
-// =======================
-// FINAL ANIMAÇÃO
-// =======================
-document.addEventListener("fimAnimacao", () => {
-
-    if (!resultadoAtual) return;
-
-    if (resultadoAtual.ganhou) {
-        state.atualizacaoSaldo(true, apostaRodada, resultadoAtual.multiplicador);
-        ativarEfeitoMultiplicador(resultadoAtual.multiplicador);
-    } else {
-        state.atualizacaoSaldo(false, apostaRodada, 1)
-    }
-
-    state.salvarEstado();
-
-    if (saldoEl) {
-        saldoEl.textContent = state.getSaldoAtual();
-    }
-
-    if (multEl) {
-        multEl.textContent = resultadoAtual.multiplicador + "x";
-    }
-
-    if (state.getSaldoAtual() <= 0) {
-        fimDeJogo(`
-            <h2>! SALDO INSUFICIENTE !</h2>`,
-            `<p>Saldo final: ${state.getSaldoAtual()}</p>
-        `);
-    }
-
-    resultadoAtual = null;
-});
 
 // =======================
 // MODAL
