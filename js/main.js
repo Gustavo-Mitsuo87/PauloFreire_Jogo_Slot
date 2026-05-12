@@ -262,7 +262,6 @@ if (btnEntrar) {
         state.saldoJogador(saldo);
         state.salvarEstado();
 
-        // document.querySelector("form").submit(); // banco de dados
         window.location.href = "slot.html";
     });
 }
@@ -325,18 +324,22 @@ window.fimDeJogo = fimDeJogo;
 
 function salvarDadosNoBanco() {
     const dados = {
-        nome: state.defineNome,
-        saldo_inicial: state.getSaldoInicio,
-        saldo_atual: state.getSaldoAtual
+        nome: state.getNome(),
+        saldo_inicial: state.getSaldoInicial(),  
+        saldo_atual: state.getSaldoAtual()
     };
 
     fetch('salvar.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dados)
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: new URLSearchParams({
+            nome: dados.nome,
+            saldo_inicial: dados.saldo_inicial,
+            saldo_atual: dados.saldo_atual
+        }).toString()
     })
-    .then(res => res.json())
-    .then(json => console.log("Dados registrados com sucesso!"))
+    .then(res => res.text())
+    .then(txt => console.log("Resposta:", txt))
     .catch(err => console.error("Erro ao salvar:", err));
 }
 
@@ -400,7 +403,7 @@ if (timer) {
     }, 1000);
 }
 
-
+// botão superior de sair
 document.getElementById("btn-sair").addEventListener("click", () => {
     fimDeJogo(`<h2>VOCÊ DESISTIU SEU BETINHA!!!</h2>`, `<p>Saldo final: ${state.getSaldoAtual()}</p>`);
 });

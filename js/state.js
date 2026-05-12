@@ -8,7 +8,7 @@ function getSaldoAtual() {
     return saldoAtual;
 }
 
-function getSaldoInicio() {
+function getSaldoInicial() {   // era getSaldoInicio
     return saldoInicio;
 }
 
@@ -97,7 +97,7 @@ export default {
     atualizacaoSaldo, 
     reset, 
     getSaldoAtual,
-    getSaldoInicio,
+    getSaldoInicial,
     getRodadas,
     getNome,
     carregarEstado,
